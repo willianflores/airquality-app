@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Day {
+  id        Int      @id @default(autoincrement())
+  date      DateTime
+  pm2_5     Float?
+  municipio String
+
+  @@map("day")
+}
+
+model Hour {
+  id        Int      @id @default(autoincrement())
+  date      DateTime
+  pm2_5     Float?
+  municipio String
+
+  @@map("hour")
+}
+
+model Hour_up {
+  id        Int      @id @default(autoincrement())
+  date      DateTime
+  pm2_5     Float?
+  municipio String
+
+  @@map("hour_up")
+}
+
+model Aq_matrix {
+  id    Int  @id @default(autoincrement())
+  mes   Int?
+  hora  Int?
+  total Int?
+
+  @@map("aqmatrix")
+}
+
+model Mun_days_up {
+  id        Int    @id @default(autoincrement())
+  municipio String
+  year      Int
+  days_up   Int
+
+  @@map("mun_days_up")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model un_days_up {
+  municipio String?
+  year      BigInt?
+  days_up   BigInt?
+
+  @@ignore
+}
+
+model Sensor {
+  id           Int      @id @default(autoincrement())
+  code         String   @unique // Ex: "RBR1", "CZS1"
+  sensor_index String   @unique // ID do PurpleAir: "25549"
+  name         String // Nome completo: "MPAC_RBR"
+  municipio    String // "Rio Branco"
+  institution  String? // "MPAC", "UFAC", etc.
+  location     String? // "promotoria", "prefeitura", etc.
+  active       Boolean  @default(true) // Sensor ativo/inativo
+  latitude     Float? // Coordenadas
+  longitude    Float?
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+
+  @@map("sensors")
+}
