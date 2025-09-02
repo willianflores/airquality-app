@@ -1,0 +1,158 @@
+.section_title{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.team_item{
+    background-color: #EEEEEE;
+    text-align: center;
+    margin: 20px 0;
+    padding: 50px 20px 50px 20px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px #22222270;
+
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+
+    h3{
+        margin: 20px 0 1px 0;
+        color: #454545;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -ms-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+
+    }
+
+    &:hover{
+        background-color: #3956DE;
+        color: white;
+        
+        h3{
+            color: white;
+        }
+    }
+
+}
+
+
+.team_info{
+    display: block;
+    margin-bottom: 0;
+
+    p{
+        color: #ACACAC;
+        font-style: italic;
+    }
+}
+
+.team_info::after{
+    background: #008AFF;
+    background: -webkit-linear-gradient(
+        135deg, #6b02FF 0%, #985BEF 100%
+    );
+    background: -O-linear-gradient(
+        135deg, #6b02FF 0%, #985BEF 100%
+    );
+    background: -moz-linear-gradient(
+        135deg, #6b02FF 0%, #985BEF 100%
+    );
+    background: linear-gradient(
+        135deg, #6b02FF 0%, #985BEF 100%
+    );
+
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    width: 50px;
+    height: 3px;
+    margin-top: -20px;
+}
+
+.team_img{
+    max-width: 250px;
+    max-height: 250px;
+    padding: 6px;
+    background-color: #FAFAFA; 
+    border-radius: 50%;
+
+
+}
+
+.team_icon{
+    margin-top: 25px;
+    margin-bottom: 24px;
+
+    li{
+        display: inline-block;
+        margin: 0 3px;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -ms-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+
+        a{
+            margin: 0;
+            display: inline-block;
+            padding: 8px;
+            width: 34px;
+            height: 34px;
+            font-size: 18px;
+            line-height: 18px;
+            background-color: #FFFFFF;
+            border-radius: 50%;
+            color: #FFFFFF;
+        }
+        
+        a.researchgate{
+            background-color: #00C6B5;
+        }
+
+        a.googlescholar{
+            background-color: #4285F4;
+        }
+
+        a.github{
+            background-color: #080808;
+        }
+
+        a.instagram{
+            background-color: #F01177;
+        }
+
+        a.orcid{
+            background-color: #A1C837;
+        }
+
+        a.email{
+            background-color: #18AF19;
+        }
+    }
+}
+
+.researchgate{
+    background-color: #00C6B5;
+}
+
+
+@media (max-width: 640px){
+    .row{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

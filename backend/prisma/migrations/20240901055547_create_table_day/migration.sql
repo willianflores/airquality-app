@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "day" ALTER COLUMN "pm2_5" DROP NOT NULL;

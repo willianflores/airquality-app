@@ -75,6 +75,9 @@ jspm_packages/
 .next/
 out/
 
+# Next.js specific
+next-env.d.ts
+
 # Nuxt.js build / generate output
 .nuxt
 dist
@@ -107,6 +110,11 @@ public
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# PnP (Plug'n'Play)
+.pnp
+.pnp.js
+.yarn/install-state.gz
 
 # IDEs and editors
 .vscode/
@@ -172,3 +180,6 @@ prisma/migrations/
 
 # Local development
 .local/
+
+# Vercel
+.vercel
