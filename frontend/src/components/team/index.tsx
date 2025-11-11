@@ -30,8 +30,8 @@ export function Team () {
                         <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
                             WILLIAN FLORES
                         </h3>
-                        <p className="m-0 p-0 text-backgroundtextcolor italic">Professor / Pesquisador</p>
-                        <p className="m-0 p-0  text-backgroundtextcolor italic">UFAC</p>
+                        <p className="m-0 p-0 text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">Professor / Pesquisador</p>
+                        <p className="m-0 p-0  text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">UFAC</p>
                     
                         <ul className="flex gap-2 my-6">
                             <li className="inline-block m-0 transition-all duration-300 ease-in-out p-[8px] w-[34px] h-[34px] text-[18px] leading-[18px] text-white bg-researchgate rounded-full">
@@ -81,8 +81,8 @@ export function Team () {
                         <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
                             SONAIRA SILVA
                         </h3>
-                        <p className="m-0 p-0 text-backgroundtextcolor italic">Professora / Pesquisadora</p>
-                        <p className="m-0 p-0  text-backgroundtextcolor italic">UFAC</p>
+                        <p className="m-0 p-0 text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">Professora / Pesquisadora</p>
+                        <p className="m-0 p-0  text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">UFAC</p>
                     
                         <ul className="flex gap-2 my-6">
                             <li className="inline-block m-0 transition-all duration-300 ease-in-out p-[8px] w-[34px] h-[34px] text-[18px] leading-[18px] text-white bg-researchgate rounded-full">
@@ -132,8 +132,8 @@ export function Team () {
                         <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
                             LIANA ANDERSON
                         </h3>
-                        <p className="m-0 p-0 text-backgroundtextcolor italic">Professora / Pesquisadora</p>
-                        <p className="m-0 p-0  text-backgroundtextcolor italic">CEMADEN</p>
+                        <p className="m-0 p-0 text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">Professora / Pesquisadora</p>
+                        <p className="m-0 p-0  text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">CEMADEN</p>
                     
                         <ul className="flex gap-2 my-6">
                             <li className="inline-block m-0 transition-all duration-300 ease-in-out p-[8px] w-[34px] h-[34px] text-[18px] leading-[18px] text-white bg-researchgate rounded-full">
@@ -183,8 +183,8 @@ export function Team () {
                         <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
                         FOSTER BROWN
                         </h3>
-                        <p className="m-0 p-0 text-backgroundtextcolor italic">Pesquisador / Professor</p>
-                        <p className="m-0 p-0  text-backgroundtextcolor italic">WOODWELL - UFAC</p>
+                        <p className="m-0 p-0 text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">Pesquisador / Professor</p>
+                        <p className="m-0 p-0  text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">WOODWELL - UFAC</p>
                     
                         <ul className="flex gap-2 my-6">
                             <li className="inline-block m-0 transition-all duration-300 ease-in-out p-[8px] w-[34px] h-[34px] text-[18px] leading-[18px] text-white bg-researchgate rounded-full">
@@ -225,8 +225,8 @@ export function Team () {
                         <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
                             ALEJANDRO DUARTE
                         </h3>
-                        <p className="m-0 p-0 text-backgroundtextcolor italic">Professor / Pesquisador</p>
-                        <p className="m-0 p-0  text-backgroundtextcolor italic">UFAC</p>
+                        <p className="m-0 p-0 text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">Professor / Pesquisador</p>
+                        <p className="m-0 p-0  text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">UFAC</p>
                     
                         <ul className="flex gap-2 my-6">
                             <li className="inline-block m-0 transition-all duration-300 ease-in-out p-[8px] w-[34px] h-[34px] text-[18px] leading-[18px] text-white bg-googlescholar rounded-full">

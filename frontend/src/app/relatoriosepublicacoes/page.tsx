@@ -12,7 +12,7 @@ import reports from "@/data/reports.json";
 function LoadingSpinner() {
   return (
     <div className="flex items-center justify-center p-8">
-      <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+      <Loader2 className="h-8 w-8 animate-spin text-orange-600" />
       <span className="ml-2 text-gray-600">Carregando dados...</span>
     </div>
   );
@@ -47,15 +47,15 @@ export default function RelatoriosPublicacoes() {
         {/* Estatísticas dinâmicas */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 max-w-4xl mx-auto">
           <div className="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
-            <div className="text-2xl font-bold text-blue-600">{stats.total}</div>
+            <div className="text-2xl font-bold text-orange-600">{stats.total}</div>
             <div className="text-sm text-gray-600">Publicações</div>
           </div>
           <div className="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
-            <div className="text-2xl font-bold text-green-600">{stats.yearRange}</div>
+            <div className="text-2xl font-bold text-orange-500">{stats.yearRange}</div>
             <div className="text-sm text-gray-600">Período</div>
           </div>
           <div className="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
-            <div className="text-2xl font-bold text-purple-600">PDF</div>
+            <div className="text-2xl font-bold text-amber-600">PDF</div>
             <div className="text-sm text-gray-600">Formato</div>
           </div>
           <div className="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">

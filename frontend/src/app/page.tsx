@@ -45,12 +45,13 @@ function PurpleAirMap() {
 
 export default function Home() {
   return (
-    <main className="sm:ml-56 min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50" role="main" aria-label="Página inicial do Portal de Qualidade do Ar do Acre">
+    <main className="sm:ml-56 min-h-screen bg-gradient-to-br from-orange-50 to-orange-100" role="main" aria-label="Página inicial do Portal de Qualidade do Ar do Acre">
       {/* Hero Section - Cards principais com melhor responsividade */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-12" aria-labelledby="hero-section">
+      <section className="bg-backgroundGray py-6 lg:py-12" aria-labelledby="hero-section">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Card do Mapa */}
-          <Card className="shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-emerald-500">
+          <Card className="shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-orange-500">
             <CardHeader className="pb-4">
               <div className="flex items-center justify-center"> 
                 <CardTitle className="text-lg sm:text-xl lg:text-2xl text-gray-800 text-center font-semibold">
@@ -66,7 +67,7 @@ export default function Home() {
           </Card>
 
           {/* Card da Tabela */}
-          <Card className="shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-blue-500">
+          <Card className="shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-orange-600">
             <CardHeader className="pb-4">
               <div className="flex items-center justify-center"> 
                 <CardTitle className="text-lg sm:text-xl lg:text-2xl text-gray-800 text-center font-semibold">
@@ -101,6 +102,7 @@ export default function Home() {
             </Link>
           </Button>
         </div>
+        </div>
       </section>
       {/* Seção sobre a Rede de Monitoramento */}
       <section className="bg-white py-12 lg:py-16" aria-labelledby="monitoring-network-title">
@@ -115,7 +117,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
             {/* Card 1 - Estabelecimento da Rede */}
-            <Card className="shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-emerald-50 to-emerald-100 border-l-4 border-emerald-500">
+            <Card className="shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-orange-50 to-orange-100 border-l-4 border-orange-500">
               <CardHeader className="pb-4">
                 <CardTitle className="text-base sm:text-lg lg:text-xl text-gray-800 font-semibold leading-tight">
                   O Estabelecimento da Rede de Monitoramento da Qualidade do Ar
@@ -129,7 +131,7 @@ export default function Home() {
                       href={EXTERNAL_LINKS.PURPLEAIR_SENSOR} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-emerald-700 hover:text-emerald-800 font-semibold underline decoration-emerald-300 hover:decoration-emerald-500"
+                      className="text-orange-700 hover:text-orange-800 font-semibold underline decoration-orange-300 hover:decoration-orange-500"
                     >
                       PurpleAir PA-II-SD
                     </Link>{" "}
@@ -141,7 +143,7 @@ export default function Home() {
                       href={EXTERNAL_LINKS.MPAC} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-emerald-700 hover:text-emerald-800 font-semibold underline decoration-emerald-300 hover:decoration-emerald-500"
+                      className="text-orange-700 hover:text-orange-800 font-semibold underline decoration-orange-300 hover:decoration-orange-500"
                     >
                       Ministério Público do Estado do Acre
                     </Link>{" "}
@@ -150,7 +152,7 @@ export default function Home() {
                       href={EXTERNAL_LINKS.UFAC} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-emerald-700 hover:text-emerald-800 font-semibold underline decoration-emerald-300 hover:decoration-emerald-500"
+                      className="text-orange-700 hover:text-orange-800 font-semibold underline decoration-orange-300 hover:decoration-orange-500"
                     >
                       Universidade Federal do Acre
                     </Link>, além de diversas outras instituições públicas e órgãos ambientais.
@@ -160,7 +162,7 @@ export default function Home() {
             </Card>
 
             {/* Card 2 - LabGAMA */}
-            <Card className="shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-blue-50 to-blue-100 border-l-4 border-blue-500">
+            <Card className="shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-orange-100 to-orange-200 border-l-4 border-orange-600">
               <CardHeader className="pb-4">
                 <CardTitle className="text-base sm:text-lg lg:text-xl text-gray-800 font-semibold leading-tight">
                   O Laboratório de Geoprocessamento Aplicado ao Meio Ambiente - LabGAMA
@@ -179,7 +181,7 @@ export default function Home() {
             </Card>
 
             {/* Card 3 - Dados e Códigos */}
-            <Card className="shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-green-50 to-green-100 border-l-4 border-green-500">
+            <Card className="shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-amber-50 to-amber-100 border-l-4 border-amber-500">
               <CardHeader className="pb-4">
                 <CardTitle className="text-base sm:text-lg lg:text-xl text-gray-800 font-semibold leading-tight">
                   Sobre os Dados e Códigos
@@ -193,7 +195,7 @@ export default function Home() {
                       href={EXTERNAL_LINKS.PURPLEAIR_API} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-green-700 hover:text-green-800 font-semibold underline decoration-green-300 hover:decoration-green-500"
+                      className="text-amber-700 hover:text-amber-800 font-semibold underline decoration-amber-300 hover:decoration-amber-500"
                     >
                       API - PurpleAir
                     </Link>, onde foram acessados e processados com linguagem de programação{" "}
@@ -201,7 +203,7 @@ export default function Home() {
                       href={EXTERNAL_LINKS.PYTHON} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-green-700 hover:text-green-800 font-semibold underline decoration-green-300 hover:decoration-green-500"
+                      className="text-amber-700 hover:text-amber-800 font-semibold underline decoration-amber-300 hover:decoration-amber-500"
                     >
                       Python
                     </Link>. Os dados processados foram armazenados em banco de dados{" "}
@@ -209,7 +211,7 @@ export default function Home() {
                       href={EXTERNAL_LINKS.POSTGRESQL} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-green-700 hover:text-green-800 font-semibold underline decoration-green-300 hover:decoration-green-500"
+                      className="text-amber-700 hover:text-amber-800 font-semibold underline decoration-amber-300 hover:decoration-amber-500"
                     >
                       PostgreSQL
                     </Link>.
@@ -220,7 +222,7 @@ export default function Home() {
                       href={EXTERNAL_LINKS.SCIENTIFIC_STUDY} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-green-700 hover:text-green-800 font-semibold underline decoration-green-300 hover:decoration-green-500"
+                      className="text-amber-700 hover:text-amber-800 font-semibold underline decoration-amber-300 hover:decoration-amber-500"
                     >
                       estudos científicos
                     </Link>{" "}
@@ -229,7 +231,7 @@ export default function Home() {
                       href={EXTERNAL_LINKS.LRAPA_CORRECTION} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-green-700 hover:text-green-800 font-semibold underline decoration-green-300 hover:decoration-green-500"
+                      className="text-amber-700 hover:text-amber-800 font-semibold underline decoration-amber-300 hover:decoration-amber-500"
                     >
                       LRAPA
                     </Link>.
@@ -240,7 +242,7 @@ export default function Home() {
                       href={EXTERNAL_LINKS.NEXTJS} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-green-700 hover:text-green-800 font-semibold underline decoration-green-300 hover:decoration-green-500"
+                      className="text-amber-700 hover:text-amber-800 font-semibold underline decoration-amber-300 hover:decoration-amber-500"
                     >
                       Next.js
                     </Link>. Todos os códigos fonte serão disponibilizados no{" "}
@@ -248,7 +250,7 @@ export default function Home() {
                       href={EXTERNAL_LINKS.GITHUB_WILLIAN} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-green-700 hover:text-green-800 font-semibold underline decoration-green-300 hover:decoration-green-500"
+                      className="text-amber-700 hover:text-amber-800 font-semibold underline decoration-amber-300 hover:decoration-amber-500"
                     >
                       GitHub
                     </Link>{" "}

@@ -56,7 +56,7 @@ function FilterSection({
           placeholder="Pesquisar relatórios..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
         />
       </div>
 
@@ -67,7 +67,7 @@ function FilterSection({
           <select
             value={selectedYear}
             onChange={(e) => setSelectedYear(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+            className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
           >
             <option value="">Todos os anos</option>
             {availableYears.map(year => (
@@ -120,8 +120,8 @@ function ModernReportCard({ report, index }: { report: Report; index: number }) 
             priority={index < 3}
           />
         ) : (
-          <div className="w-full h-60 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-            <FileText className="h-16 w-16 text-blue-400" />
+          <div className="w-full h-60 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
+            <FileText className="h-16 w-16 text-orange-400" />
           </div>
         )}
         
@@ -139,7 +139,7 @@ function ModernReportCard({ report, index }: { report: Report; index: number }) 
 
       <CardContent className="p-6">
         {/* Título */}
-        <h3 className="font-bold text-lg text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
+        <h3 className="font-bold text-lg text-gray-900 mb-3 line-clamp-2 group-hover:text-orange-600 transition-colors">
           {report.title}
         </h3>
 
@@ -156,7 +156,7 @@ function ModernReportCard({ report, index }: { report: Report; index: number }) 
               href={report.fileUrl}
               download={generateDownloadName(report.title, report.date)}
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
+              className="inline-flex items-center px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
             >
               <Download className="h-4 w-4 mr-2" />
               Download
@@ -175,7 +175,7 @@ function ModernReportCard({ report, index }: { report: Report; index: number }) 
           </div>
 
           {/* Link externo */}
-          <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
+          <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-orange-500 transition-colors" />
         </div>
       </CardContent>
     </Card>

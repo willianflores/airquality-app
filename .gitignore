@@ -183,3 +183,16 @@ prisma/migrations/
 
 # Vercel
 .vercel
+
+# MD files
+frontend/COLOR_SCHEME_CHANGES.md
+frontend/COMO_ADICIONAR_PUBLICACOES.md
+frontend/README_PUBLICACOES.md
+DOCKER_DEPLOY_ANALYSIS.md
+INFRAESTRUTURA_DEPLOY.md
+backend/scripts/ARCHITECTURE.md
+backend/scripts/CHANGES_SUMMARY.md
+backend/scripts/CORRECTION_APPLIED.md
+backend/scripts/QUICK_START.md
+backend/scripts/README_DAILY_UPDATE.md
+backend/scripts/TEST_INSTRUCTIONS.txt
