@@ -207,3 +207,9 @@ build/
 !frontend/README.md
 !**/LICENSE.md
 !**/LICENCE.md
+
+# Scripts e arquivos de configuração local
+scripts/
+install-postgis.sh
+POSTGIS_SETUP.txt
+remove_duplicate_gitignore.sh
