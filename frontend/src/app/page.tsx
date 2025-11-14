@@ -5,9 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import Link from "next/link";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 import { Suspense, useState } from "react";
-import { ChartNoAxesCombined, ChartArea, LibraryBig } from "lucide-react";
+import { ChartNoAxesCombined, ChartArea, LibraryBig, ExternalLink, MapPin, Mail, Instagram } from "lucide-react";
 import { EXTERNAL_LINKS, IFRAME_CONFIG } from "@/config/constants";
 
 // Lazy loading do componente Team para melhor performance
@@ -269,6 +270,191 @@ export default function Home() {
           <LazyTeam />
         </Suspense>
       </section>
+
+      {/* Seção de Parceiros Institucionais */}
+      <section className="bg-white py-12 lg:py-16" aria-labelledby="partners-title">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 id="partners-title" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Parceiros Institucionais
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Instituições que colaboram com a Rede de Monitoramento da Qualidade do Ar do Acre
+            </p>
+          </div>
+          
+          <div className="space-y-12 lg:space-y-16">
+            {/* Grupo 1: Responsáveis pela Rede */}
+            <div>
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 text-center mb-6">
+                Responsáveis pela Rede
+              </h3>
+              <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
+                {/* UFAC */}
+                <Link 
+                  href={EXTERNAL_LINKS.UFAC}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center transition-all duration-300 hover:scale-105 hover:opacity-80"
+                  aria-label="Visitar site da Universidade Federal do Acre"
+                >
+                  <div className="relative w-48 h-32 sm:w-56 sm:h-36 lg:w-64 lg:h-40">
+                    <Image
+                      src="/partners/UFAC.png"
+                      alt="Logo da Universidade Federal do Acre - UFAC"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 640px) 192px, (max-width: 1024px) 224px, 256px"
+                    />
+                  </div>
+                </Link>
+
+                {/* MPAC */}
+                <Link 
+                  href={EXTERNAL_LINKS.MPAC}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center transition-all duration-300 hover:scale-105 hover:opacity-80"
+                  aria-label="Visitar site do Ministério Público do Estado do Acre"
+                >
+                  <div className="relative w-48 h-32 sm:w-56 sm:h-36 lg:w-64 lg:h-40">
+                    <Image
+                      src="/partners/MPAC.jpeg"
+                      alt="Logo do Ministério Público do Estado do Acre - MPAC"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 640px) 192px, (max-width: 1024px) 224px, 256px"
+                    />
+                  </div>
+                </Link>
+              </div>
+            </div>
+
+            {/* Grupo 2: Apoio Técnico e Financeiro */}
+            <div>
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 text-center mb-6">
+                Apoio Técnico e Financeiro
+              </h3>
+              <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
+                {/* IPAM */}
+                <Link 
+                  href={EXTERNAL_LINKS.IPAM}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center transition-all duration-300 hover:scale-105 hover:opacity-80"
+                  aria-label="Visitar site do Instituto de Pesquisa Ambiental da Amazônia"
+                >
+                  <div className="relative w-48 h-32 sm:w-56 sm:h-36 lg:w-64 lg:h-40">
+                    <Image
+                      src="/partners/IPAM.png"
+                      alt="Logo do Instituto de Pesquisa Ambiental da Amazônia - IPAM"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 640px) 192px, (max-width: 1024px) 224px, 256px"
+                    />
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Rodapé */}
+      <footer className="text-gray-800 py-12 px-6 md:px-20 w-full mt-auto" style={{ backgroundColor: '#eeeeee' }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-10">
+            {/* Seção LabGAMA */}
+            <div>
+              <Link 
+                href="https://www.ufac.br/labgama"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center mb-4 hover:opacity-80 transition-opacity"
+              >
+                <div className="relative w-10 h-10 mr-3">
+                  <Image
+                    src="/labgama/LabGama.png"
+                    alt="Logo LabGAMA"
+                    fill
+                    className="object-contain"
+                    sizes="40px"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">LabGAMA</h3>
+              </Link>
+              <p className="text-sm mb-4 text-gray-700">
+                Laboratório de Geoprocessamento Aplicado ao Meio Ambiente. Promovendo monitoramento e gestão da qualidade do ar no Estado do Acre através de tecnologia e pesquisa.
+              </p>
+              <p className="text-sm mb-2">
+                <Link 
+                  href={EXTERNAL_LINKS.UFAC}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-orange-600 flex items-center text-gray-800"
+                >
+                  <span className="mr-2">Visite o site da UFAC</span>
+                  <ExternalLink className="h-4 w-4" />
+                </Link>
+              </p>
+            </div>
+
+            {/* Seção Contato */}
+            <div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Contato</h3>
+              <div className="space-y-3">
+                <p className="text-sm flex items-start text-gray-700">
+                  <MapPin className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0 text-gray-600" />
+                  <span>Cruzeiro do Sul, Acre - Brasil</span>
+                </p>
+                <p className="text-sm flex items-start text-gray-700">
+                  <Mail className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0 text-gray-600" />
+                  <a href="mailto:labgama@ufac.br" className="hover:text-orange-600 text-gray-800">labgama@ufac.br</a>
+                </p>
+                <p className="text-sm flex items-start text-gray-700">
+                  <Instagram className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0 text-gray-600" />
+                  <a 
+                    href="https://www.instagram.com/ufac.labgama/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-orange-600 text-gray-800"
+                  >
+                    @ufac.labgama
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            {/* Seção Informações */}
+            <div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Sobre o Projeto</h3>
+              <p className="text-sm mb-4 text-gray-700">
+                Portal de monitoramento da qualidade do ar do Acre, desenvolvido pelo LabGAMA em parceria com o MPAC e outras instituições.
+              </p>
+              <p className="text-sm">
+                <Link 
+                  href={EXTERNAL_LINKS.GITHUB_WILLIAN}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-orange-600 text-gray-800"
+                >
+                  Código fonte no GitHub
+                </Link>
+              </p>
+            </div>
+          </div>
+
+          {/* Seção inferior com informações de parceiros e copyright */}
+          <div className="border-t border-gray-300 mt-10 pt-6">
+            <p className="text-sm text-center mb-2 text-gray-700">
+              Responsáveis pela Rede: UFAC e MPAC | Apoio Técnico e Financeiro: IPAM
+            </p>
+            <p className="text-sm text-center text-gray-600">
+              © {new Date().getFullYear()} LabGAMA - UFAC. Todos os direitos reservados.
+            </p>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

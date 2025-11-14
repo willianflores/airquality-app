@@ -10,6 +10,7 @@ export const EXTERNAL_LINKS = {
   // Instituições
   MPAC: 'https://www.mpac.mp.br/',
   UFAC: 'http://www.ufac.br/',
+  IPAM: 'https://ipam.org.br/',
   
   // Ferramentas e Frameworks
   PYTHON: 'https://www.python.org/',

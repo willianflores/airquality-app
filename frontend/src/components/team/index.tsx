@@ -18,7 +18,7 @@ export function Team () {
     return (
         <section className="bg-backgroundWhite py-10 px-6">
             <div className="pb-10">
-                <h2 className="text-center text-base sm:text-xl font-bold text-gray-800 ">
+                <h2 className="text-center text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 ">
                     Equipe de Pesquisadores Envolvidos na Iniciativa
                 </h2>
             </div>
@@ -133,7 +133,7 @@ export function Team () {
                             LIANA ANDERSON
                         </h3>
                         <p className="m-0 p-0 text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">Professora / Pesquisadora</p>
-                        <p className="m-0 p-0  text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">CEMADEN</p>
+                        <p className="m-0 p-0  text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">INPE</p>
                     
                         <ul className="flex gap-2 my-6">
                             <li className="inline-block m-0 transition-all duration-300 ease-in-out p-[8px] w-[34px] h-[34px] text-[18px] leading-[18px] text-white bg-researchgate rounded-full">
