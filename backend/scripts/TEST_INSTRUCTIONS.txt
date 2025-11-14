@@ -1,0 +1,198 @@
+╔════════════════════════════════════════════════════════════════════════╗
+║                  INSTRUÇÕES DE TESTE - AIR QUALITY APP                ║
+║                     Sistema de Atualização Diária                      ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+📋 CHECKLIST DE TESTE COMPLETO
+═══════════════════════════════════════════════════════════════════════
+
+□ 1. INSTALAÇÃO DE DEPENDÊNCIAS
+    cd /home/willianflores/localhost/airquality-app/backend/scripts
+    pip install -r requirements.txt
+    
+    ✓ Verificar: Sem erros de instalação
+
+□ 2. CONFIGURAÇÃO DO AMBIENTE
+    cp config.env.example config.env
+    nano config.env
+    
+    Editar:
+    - DB_PASSWORD (sua senha do PostgreSQL)
+    - PURPLEAIR_API_KEY (sua chave da API)
+    
+    ✓ Verificar: Arquivo config.env criado e editado
+
+□ 3. VERIFICAÇÃO DE SAÚDE DO SISTEMA
+    python3 health_check.py
+    
+    ✓ Esperado: Todos os checks em verde ou amarelo
+    ✗ Se vermelho: Corrigir problemas antes de continuar
+
+□ 4. TESTE DE DOWNLOAD (MANUAL)
+    python3 getPurpleairApiHistoricalData.py
+    
+    ✓ Esperado: 
+       - "Período de download: ..." exibido
+       - "Download concluído... X registros obtidos"
+       - "Dados salvos com sucesso"
+    
+    ✓ Verificar no banco:
+       psql -h localhost -U postgres -d db_airquality \
+         -c "SELECT MAX(time_stamp), COUNT(*) FROM sc_padata.tb_parealtimedata;"
+
+□ 5. TESTE DE PROCESSAMENTO (MANUAL)
+    python3 runFuctions_server.py
+    
+    ✓ Esperado:
+       - "Obtendo dados brutos do banco..."
+       - "Calculando médias horárias..."
+       - "Calculando médias diárias..."
+       - "✅ Processamento concluído"
+    
+    ✓ Verificar no banco:
+       psql -h localhost -U postgres -d db_airquality \
+         -c "SELECT MAX(date), COUNT(*) FROM hour;"
+       psql -h localhost -U postgres -d db_airquality \
+         -c "SELECT MAX(date), COUNT(*) FROM day;"
+
+□ 6. TESTE COMPLETO INTEGRADO
+    python3 daily_update.py
+    
+    ✓ Esperado:
+       - "ETAPA 1: Download..." executada com sucesso
+       - "ETAPA 2: Processamento..." executada com sucesso
+       - "RESUMO FINAL: ✅ SUCESSO"
+       - Exit code 0
+    
+    ✓ Verificar logs:
+       tail -f ../logs/daily_update.log
+
+□ 7. CONFIGURAÇÃO DO CRON JOB
+    chmod +x setup_cron.sh
+    ./setup_cron.sh
+    
+    ✓ Verificar:
+       crontab -l | grep daily_update
+    
+    ✓ Esperado: Linha com "5 0 * * * ... daily_update.py"
+
+□ 8. VERIFICAÇÃO PÓS-INSTALAÇÃO
+    python3 health_check.py
+    
+    ✓ Esperado: Todos os checks OK (verde)
+
+═══════════════════════════════════════════════════════════════════════
+🐛 SOLUÇÃO DE PROBLEMAS COMUNS
+═══════════════════════════════════════════════════════════════════════
+
+PROBLEMA: "ModuleNotFoundError: No module named 'pandas'"
+SOLUÇÃO: pip install -r requirements.txt
+
+PROBLEMA: "connection to server failed: Connection refused"
+SOLUÇÃO: 
+  - Verificar se PostgreSQL está rodando: systemctl status postgresql
+  - Verificar credenciais em config.env
+
+PROBLEMA: "PURPLEAIR_API_KEY não encontrada"
+SOLUÇÃO: 
+  - Editar config.env
+  - Adicionar: PURPLEAIR_API_KEY=sua_chave_aqui
+
+PROBLEMA: "Nenhum dado foi obtido da API PurpleAir"
+SOLUÇÃO:
+  - Verificar API key válida
+  - Verificar conectividade: curl https://api.purpleair.com/v1/sensors/57177
+  - Pode ser que sensores estejam offline (normal)
+
+PROBLEMA: "Nenhum dado encontrado no banco"
+SOLUÇÃO:
+  - Executar primeiro: python3 getPurpleairApiHistoricalData.py
+  - Verificar se dados foram inseridos no banco
+
+═══════════════════════════════════════════════════════════════════════
+📊 VERIFICAÇÕES SQL
+═══════════════════════════════════════════════════════════════════════
+
+# Conectar ao banco
+psql -h localhost -U postgres -d db_airquality
+
+# Verificar dados brutos (últimas 48h)
+SELECT MAX(time_stamp) as ultimo_dado, 
+       COUNT(*) as total_registros
+FROM sc_padata.tb_parealtimedata
+WHERE time_stamp >= NOW() - INTERVAL '48 hours';
+
+# Verificar médias horárias (últimas 48h)
+SELECT MAX(date) as ultima_hora,
+       COUNT(*) as total_registros
+FROM hour
+WHERE date >= NOW() - INTERVAL '48 hours';
+
+# Verificar médias diárias (últimos 7 dias)
+SELECT MAX(date) as ultimo_dia,
+       COUNT(*) as total_registros
+FROM day
+WHERE date >= NOW() - INTERVAL '7 days';
+
+# Ver dados por município (hoje)
+SELECT municipio, 
+       AVG(pm2_5) as pm25_media,
+       COUNT(*) as medicoes
+FROM hour
+WHERE date >= CURRENT_DATE
+GROUP BY municipio
+ORDER BY pm25_media DESC;
+
+═══════════════════════════════════════════════════════════════════════
+📝 LOGS IMPORTANTES
+═══════════════════════════════════════════════════════════════════════
+
+# Log principal (formatado)
+tail -f /home/willianflores/localhost/airquality-app/backend/logs/daily_update.log
+
+# Log do cron (bruto)
+tail -f /home/willianflores/localhost/airquality-app/backend/logs/cron_output.log
+
+# Ver apenas erros
+grep "ERROR\|❌" /home/willianflores/localhost/airquality-app/backend/logs/daily_update.log
+
+# Ver últimas execuções
+grep "RESUMO FINAL" /home/willianflores/localhost/airquality-app/backend/logs/daily_update.log | tail -10
+
+═══════════════════════════════════════════════════════════════════════
+✅ CRITÉRIOS DE SUCESSO
+═══════════════════════════════════════════════════════════════════════
+
+Sistema está pronto quando:
+
+✓ health_check.py retorna todos os checks OK
+✓ Execução manual de daily_update.py termina com sucesso
+✓ Dados aparecem nas 3 tabelas (tb_parealtimedata, hour, day)
+✓ Cron job está configurado (crontab -l)
+✓ Logs estão sendo gerados corretamente
+✓ Não há erros nos logs das últimas 24h
+
+═══════════════════════════════════════════════════════════════════════
+📞 PRÓXIMOS PASSOS
+═══════════════════════════════════════════════════════════════════════
+
+1. Aguardar primeira execução automática (00:05 do próximo dia)
+2. Verificar logs no dia seguinte
+3. Configurar monitoramento/alertas (opcional)
+4. Configurar logrotate (ver README_DAILY_UPDATE.md)
+5. Fazer backup do banco periodicamente
+
+═══════════════════════════════════════════════════════════════════════
+📚 DOCUMENTAÇÃO ADICIONAL
+═══════════════════════════════════════════════════════════════════════
+
+• QUICK_START.md         - Início rápido (5 minutos)
+• README_DAILY_UPDATE.md - Documentação completa
+• ARCHITECTURE.md        - Arquitetura do sistema
+• CHANGES_SUMMARY.md     - Resumo das mudanças
+
+═══════════════════════════════════════════════════════════════════════
+
+Data: 2025-11-09
+Versão: 1.0
+

@@ -1,9 +1,15 @@
 from sqlalchemy import create_engine
-import mysql.connector
 import psycopg2
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
+
+# Importação opcional do MySQL (caso necessário no futuro)
+try:
+    import mysql.connector
+    MYSQL_AVAILABLE = True
+except ImportError:
+    MYSQL_AVAILABLE = False
 
 ## Get data from PostgreSQL database 
 def processDatabaseData(DBMS_name, host_name, user_name, password, db_name, table_name, start_date, end_date):
@@ -11,6 +17,9 @@ def processDatabaseData(DBMS_name, host_name, user_name, password, db_name, tabl
     try:
         # Conexão com o banco de dados usando SQLAlchemy
         if DBMS_name == 'MySQL':
+            if not MYSQL_AVAILABLE:
+                print("MySQL não está disponível. Instale com: pip install mysql-connector-python")
+                return None
             engine = create_engine(f"mysql+mysqlconnector://{user_name}:{password}@{host_name}/{db_name}")
         elif DBMS_name == 'PostgreSQL':
             engine = create_engine(f"postgresql+psycopg2://{user_name}:{password}@{host_name}/{db_name}")
@@ -73,6 +82,9 @@ def getDbase(DBMS_name, host_name, user_name, password, db_name, table_name, sta
     try:
         # Conexão com MySQL usando SQLAlchemy
         if DBMS_name == 'MySQL':
+            if not MYSQL_AVAILABLE:
+                print("MySQL não está disponível. Instale com: pip install mysql-connector-python")
+                return None
             engine = create_engine(f"mysql+mysqlconnector://{user_name}:{password}@{host_name}/{db_name}")
             # Definir a consulta SQL para MySQL
             query = f"""

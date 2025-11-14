@@ -9,6 +9,10 @@ const nextConfig = {
     // ⚠️ Perigoso: desabilita verificação de ESLint durante o build
     ignoreDuringBuilds: true,
   },
+  output: {
+    // Define explicitamente o diretório raiz do projeto para evitar warning de múltiplos lockfiles
+    outputFileTracingRoot: '/home/willianflores/localhost/airquality-app/frontend',
+  },
 };
 
 export default nextConfig;

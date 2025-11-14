@@ -3,7 +3,6 @@ Script para processar dados de PM2.5 baixados da API PurpleAir
 Calcula médias horárias e diárias, e filtra dados conforme padrões da OMS
 Preparado para execução diária automatizada
 """
-import mysql.connector
 import psycopg2
 import pandas as pd
 import numpy as np
@@ -87,11 +86,11 @@ def process_daily_data():
         logger.info("Iniciando processamento de dados PM2.5")
         logger.info(f"Período: {start_date} até {end_date}")
         logger.info("=" * 80)
-        
+
         # Conectar ao banco e obter dados
         logger.info("Obtendo dados brutos do banco...")
         df = getDbase(DBMS_NAME, HOST, USER, PASSWORD, DB_NAME, TABLE_NAME, start_date, end_date)
-        
+
         if df is None or df.empty:
             logger.warning("Nenhum dado encontrado no banco para o período especificado")
             return False
@@ -101,7 +100,7 @@ def process_daily_data():
         # Transformar dados
         logger.info("Transformando dados...")
         df = setPSQLPm25Data(df)
-        
+
         # Calcular médias horárias
         logger.info("Calculando médias horárias...")
         df_hours = pm25HourAverage(df, start_date, end_date)
@@ -110,11 +109,11 @@ def process_daily_data():
         table_hour = os.getenv('TABLE_HOUR', 'hour')
         logger.info(f"Salvando {len(df_hours)} registros de médias horárias na tabela '{table_hour}'...")
         saveToPostgresql(df_hours, table_hour, DB_NAME, USER, PASSWORD, HOST, 5432, 'append')
-        
+
         # Calcular médias diárias
         logger.info("Calculando médias diárias...")
         df_day = pm25DayAverage(df, start_date, end_date)
-        
+
         # Preencher valores ausentes
         logger.info("Preenchendo valores ausentes...")
         df_day = fillPm25MissingDate(df_day, start_date, end_date, "1d")
@@ -122,16 +121,16 @@ def process_daily_data():
         # Calcular mediana
         logger.info("Calculando mediana...")
         df_day = calculatePM25Median(df_day)
-        
+
         # Filtrar conforme limites da OMS
         logger.info("Filtrando dados conforme padrões da OMS (PM2.5 > 15 µg/m³)...")
         df_day = filterUpWHOLevel(df_day, start_date, end_date, "1d")
-        
+
         # Salvar dados diários
         table_day = os.getenv('TABLE_DAY', 'day')
         logger.info(f"Salvando {len(df_day)} registros de médias diárias na tabela '{table_day}'...")
         saveToPostgresql(df_day, table_day, DB_NAME, USER, PASSWORD, HOST, 5432, 'append')
-        
+
         logger.info("=" * 80)
         logger.info("✅ Processamento concluído com sucesso!")
         logger.info("=" * 80)

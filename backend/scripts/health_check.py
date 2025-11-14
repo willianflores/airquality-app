@@ -64,7 +64,7 @@ def check_dependencies():
 def check_database_connection():
     """Verifica conexão com o banco de dados"""
     try:
-        from sqlalchemy import create_engine
+        from sqlalchemy import create_engine, text
         
         db_host = os.getenv('DB_HOST', 'localhost')
         db_port = os.getenv('DB_PORT', '5432')
@@ -77,7 +77,7 @@ def check_database_connection():
         
         engine = create_engine(f'postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}')
         conn = engine.connect()
-        result = conn.execute("SELECT 1;")
+        result = conn.execute(text("SELECT 1"))
         conn.close()
         engine.dispose()
         
@@ -182,11 +182,19 @@ def check_database_data():
         last_data = df['last_data'].iloc[0]
         total = df['total'].iloc[0]
         
-        if last_data is None:
+        if pd.isna(last_data):
             return "WARN", "Nenhum dado nas últimas 48 horas"
         
+        # Converter para datetime com timezone aware
+        last_data_dt = pd.to_datetime(last_data)
+        
+        # Se já tem timezone, manter; senão, assumir UTC
+        if last_data_dt.tzinfo is None:
+            last_data_aware = last_data_dt.tz_localize('UTC')
+        else:
+            last_data_aware = last_data_dt.tz_convert('UTC')
+        
         now = datetime.now(pytz.UTC)
-        last_data_aware = pd.to_datetime(last_data).tz_localize('UTC')
         hours_ago = (now - last_data_aware).total_seconds() / 3600
         
         if hours_ago < 26:
