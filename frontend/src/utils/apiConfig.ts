@@ -4,22 +4,27 @@
  * Detecta automaticamente a URL base da API baseada no ambiente de execução
  */
 export function getApiBaseUrl(): string {
-  // Se estivermos no servidor (SSR), usar a URL do ambiente
-  if (typeof window === 'undefined') {
-    return process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3333';
+  // SEMPRE usar a variável de ambiente se estiver definida
+  if (process.env.NEXT_PUBLIC_API_URL) {
+    return process.env.NEXT_PUBLIC_API_URL;
   }
 
-  // Se estivermos no cliente, detectar dinamicamente
+  // Se estivermos no servidor (SSR), usar fallback
+  if (typeof window === 'undefined') {
+    return 'http://localhost:8080';
+  }
+
+  // Se estivermos no cliente, usar fallback dinâmico
   const currentUrl = window.location;
   
-  // Se estivermos acessando via IP (não localhost), ajustar a URL da API
+  // Para produção (acesso via IP ou domínio), usar /api via Nginx
   if (currentUrl.hostname !== 'localhost' && currentUrl.hostname !== '127.0.0.1') {
-    // Usar o mesmo IP do frontend, mas na porta 3333
-    return `http://${currentUrl.hostname}:3333`;
+    // Usar o mesmo host do frontend + /api (via Nginx reverse proxy)
+    return `${currentUrl.protocol}//${currentUrl.hostname}/api`;
   }
   
-  // Para localhost, usar a configuração padrão
-  return process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3333';
+  // Para localhost em desenvolvimento
+  return 'http://localhost:8080';
 }
 
 /**
