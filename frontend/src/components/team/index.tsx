@@ -1,13 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import willianPhoto from "/public/teamImg/willian-profile-grey-crop.jpg"
-import sonairaPhoto from "/public/teamImg/sonaira-silva-grey-crop.jpg"
-import lianaPhoto from "/public/teamImg/liana-anderson-grey-crop.jpg"
-import fosterPhoto from "/public/teamImg/foster-brown-grey-crop.jpg"
-import alaejandroPhoto from "/public/teamImg/alejandro-duarte-grey-crop.jpg"
-
-import FaLattes from "/public/teamImg/lattes-square.svg"
 import {FaInstagram, FaResearchgate, FaGithub, FaOrcid} from "react-icons/fa"
 import {FaGoogleScholar} from "react-icons/fa6"
 import { MdEmail } from "react-icons/md";
@@ -26,7 +19,7 @@ export function Team () {
             <div className=" grid grid-cols-1 sm:grid-cols-5 gap-10 my-1">
                 <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl">
                     <CardContent className="my-5  py-[50px] px-[20px] flex flex-col items-center text-center ">
-                        <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src={ willianPhoto } alt="Foto do pesquisador Willian" />
+                        <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src="/teamImg/willian-profile-grey-crop.jpg" alt="Foto do pesquisador Willian" width={250} height={250} />
                         <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
                             WILLIAN FLORES
                         </h3>
@@ -77,7 +70,7 @@ export function Team () {
 
                 <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl">
                     <CardContent className="my-5  py-[50px] px-[20px] flex flex-col items-center text-center ">
-                        <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src={ sonairaPhoto } alt="Foto da pesquisadora Sonaira" />
+                        <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src="/teamImg/sonaira-silva-grey-crop.jpg" alt="Foto da pesquisadora Sonaira" width={250} height={250} />
                         <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
                             SONAIRA SILVA
                         </h3>
@@ -128,7 +121,7 @@ export function Team () {
                 
                 <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl">
                     <CardContent className="my-5  py-[50px] px-[20px] flex flex-col items-center text-center ">
-                        <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src={ lianaPhoto } alt="Foto da pesquisadora Liana" />
+                        <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src="/teamImg/liana-anderson-grey-crop.jpg" alt="Foto da pesquisadora Liana" width={250} height={250} />
                         <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
                             LIANA ANDERSON
                         </h3>
@@ -179,7 +172,7 @@ export function Team () {
 
                 <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl">
                     <CardContent className="my-5  py-[50px] px-[20px] flex flex-col items-center text-center ">
-                        <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src={ fosterPhoto } alt="Foto do pesquisador Foster" />
+                        <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src="/teamImg/foster-brown-grey-crop.jpg" alt="Foto do pesquisador Foster" width={250} height={250} />
                         <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
                         FOSTER BROWN
                         </h3>
@@ -221,7 +214,7 @@ export function Team () {
 
                 <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl">
                     <CardContent className="my-5  py-[50px] px-[20px] flex flex-col items-center text-center ">
-                        <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src={ alaejandroPhoto } alt="Foto do pesquisador Alejandro" />
+                        <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src="/teamImg/alejandro-duarte-grey-crop.jpg" alt="Foto do pesquisador Alejandro" width={250} height={250} />
                         <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
                             ALEJANDRO DUARTE
                         </h3>

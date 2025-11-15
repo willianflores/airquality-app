@@ -84,7 +84,10 @@ dist
 
 # Gatsby files
 .cache/
-public
+# public  # Removido - Next.js precisa versionar frontend/public
+
+# Exceção: Next.js precisa da pasta public
+!frontend/public/
 
 # Vuepress build output
 .vuepress/dist

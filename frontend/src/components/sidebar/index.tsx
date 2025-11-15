@@ -7,7 +7,6 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle, VisuallyHidden } from ".
 import Image from "next/image";
 
 import { Menu, ChartNoAxesCombined, ChartArea, Home, House, LibraryBig, Activity, Shield, Settings  } from 'lucide-react';
-import logoImg from "/public/navbarLogo.png";
 import { useAuth } from '@/contexts/AuthContext';
 
 export function Sidebar(){
@@ -25,7 +24,7 @@ export function Sidebar(){
                 <nav className="flex flex-col gap-6 px-4 py-6 text-base">
                     <div className="border-b border-gray-600 pb-4 mb-2">
                         <Link href="/" className="flex items-center justify-center text-white hover:text-gray-200 transition-colors" prefetch={false}> 
-                            <Image alt="Logo Acre Qualidade do Ar" src={logoImg} height={60} className="transition-all"/>
+                            <Image alt="Logo Acre Qualidade do Ar" src="/navbarLogo.png" height={60} width={60} className="transition-all"/>
                             <span className="sr-only">Logo do Projeto</span>
                         </Link>
                     </div>
@@ -99,7 +98,7 @@ export function Sidebar(){
                             <nav className="flex flex-col gap-6 pt-6">
                                 <div className="border-b border-gray-600 pb-4 mb-2">
                                     <Link href="/" onClick={handleNavigation} className="flex items-center justify-center text-white hover:text-gray-200 transition-colors" prefetch={false}> 
-                                        <Image alt="Logo Acre Qualidade do Ar" src={logoImg} height={50} className="transition-all"/>
+                                        <Image alt="Logo Acre Qualidade do Ar" src="/navbarLogo.png" height={50} width={50} className="transition-all"/>
                                         <span className="sr-only">Logo do Projeto</span>
                                     </Link>
                                 </div>
