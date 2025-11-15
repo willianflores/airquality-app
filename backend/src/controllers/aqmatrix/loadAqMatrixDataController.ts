@@ -19,8 +19,9 @@ class LoadAqMatrixDataController {
                     console.log('⚠️ Banco conectado mas sem dados, usando mock...');
                 }
             } catch (dbError) {
-                console.log('❌ Erro de conexão com banco de dados:', dbError.message);
-                console.log('🔄 Stack trace:', dbError.stack);
+                const error = dbError as Error;
+                console.log('❌ Erro de conexão com banco de dados:', error.message);
+                console.log('🔄 Stack trace:', error.stack);
                 console.log('🔄 Usando dados mock como fallback...');
             }
             

@@ -147,7 +147,7 @@ class SensorController {
     } catch (error) {
       console.error('Erro ao atualizar sensor:', error);
       
-      if (error.code === 'P2025') {
+      if ((error as any).code === 'P2025') {
         return res.status(404).json({
           success: false,
           error: 'Sensor não encontrado'
