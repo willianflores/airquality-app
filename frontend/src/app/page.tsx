@@ -283,13 +283,14 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="space-y-12 lg:space-y-16">
+          {/* Grid responsivo: empilhado no mobile, lado a lado no desktop */}
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-12 lg:gap-16">
             {/* Grupo 1: Responsáveis pela Rede */}
-            <div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 text-center mb-6">
-                Responsáveis pela Rede
+            <div className="flex flex-col">
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 text-center mb-6 lg:mb-8">
+                Coordenação da Rede
               </h3>
-              <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
+              <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-8">
                 {/* UFAC */}
                 <Link 
                   href={EXTERNAL_LINKS.UFAC}
@@ -298,13 +299,13 @@ export default function Home() {
                   className="flex items-center justify-center transition-all duration-300 hover:scale-105 hover:opacity-80"
                   aria-label="Visitar site da Universidade Federal do Acre"
                 >
-                  <div className="relative w-48 h-32 sm:w-56 sm:h-36 lg:w-64 lg:h-40">
+                  <div className="relative w-44 h-28 sm:w-48 sm:h-32">
                     <Image
                       src="/partners/UFAC.png"
                       alt="Logo da Universidade Federal do Acre - UFAC"
                       fill
                       className="object-contain"
-                      sizes="(max-width: 640px) 192px, (max-width: 1024px) 224px, 256px"
+                      sizes="(max-width: 640px) 176px, 192px"
                     />
                   </div>
                 </Link>
@@ -317,25 +318,71 @@ export default function Home() {
                   className="flex items-center justify-center transition-all duration-300 hover:scale-105 hover:opacity-80"
                   aria-label="Visitar site do Ministério Público do Estado do Acre"
                 >
-                  <div className="relative w-48 h-32 sm:w-56 sm:h-36 lg:w-64 lg:h-40">
+                  <div className="relative w-44 h-28 sm:w-48 sm:h-32">
                     <Image
                       src="/partners/MPAC.jpeg"
                       alt="Logo do Ministério Público do Estado do Acre - MPAC"
                       fill
                       className="object-contain"
-                      sizes="(max-width: 640px) 192px, (max-width: 1024px) 224px, 256px"
+                      sizes="(max-width: 640px) 176px, 192px"
                     />
                   </div>
                 </Link>
               </div>
             </div>
 
-            {/* Grupo 2: Apoio Técnico e Financeiro */}
-            <div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 text-center mb-6">
+            {/* Grupo 2: Cooperação Técnico-Científica */}
+            <div className="flex flex-col">
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 text-center mb-6 lg:mb-8">
+                Cooperação Técnico-Científica
+              </h3>
+              <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-8">
+                {/* INPE */}
+                <Link 
+                  href={EXTERNAL_LINKS.INPE}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center transition-all duration-300 hover:scale-105 hover:opacity-80"
+                  aria-label="Visitar site do Instituto Nacional de Pesquisas Espaciais"
+                >
+                  <div className="relative w-44 h-28 sm:w-48 sm:h-32">
+                    <Image
+                      src="/partners/INPE.png"
+                      alt="Logo do Instituto Nacional de Pesquisas Espaciais - INPE"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 640px) 176px, 192px"
+                    />
+                  </div>
+                </Link>
+
+                {/* Woodwell Climate Research Center */}
+                <Link 
+                  href={EXTERNAL_LINKS.WOODWELL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center transition-all duration-300 hover:scale-105 hover:opacity-80"
+                  aria-label="Visitar site do Woodwell Climate Research Center"
+                >
+                  <div className="relative w-44 h-28 sm:w-48 sm:h-32">
+                    <Image
+                      src="/partners/woodwell_climate_research_center.png"
+                      alt="Logo do Woodwell Climate Research Center"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 640px) 176px, 192px"
+                    />
+                  </div>
+                </Link>
+              </div>
+            </div>
+
+            {/* Grupo 3: Apoio Técnico e Financeiro */}
+            <div className="flex flex-col">
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 text-center mb-6 lg:mb-8">
                 Apoio Técnico e Financeiro
               </h3>
-              <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
+              <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-8">
                 {/* IPAM */}
                 <Link 
                   href={EXTERNAL_LINKS.IPAM}
@@ -344,13 +391,15 @@ export default function Home() {
                   className="flex items-center justify-center transition-all duration-300 hover:scale-105 hover:opacity-80"
                   aria-label="Visitar site do Instituto de Pesquisa Ambiental da Amazônia"
                 >
-                  <div className="relative w-48 h-32 sm:w-56 sm:h-36 lg:w-64 lg:h-40">
+                  <div className="relative w-44 h-28 sm:w-48 sm:h-32">
                     <Image
                       src="/partners/IPAM.png"
                       alt="Logo do Instituto de Pesquisa Ambiental da Amazônia - IPAM"
                       fill
                       className="object-contain"
-                      sizes="(max-width: 640px) 192px, (max-width: 1024px) 224px, 256px"
+                      sizes="(max-width: 640px) 176px, 192px"
+                      priority
+                      unoptimized
                     />
                   </div>
                 </Link>
@@ -447,7 +496,7 @@ export default function Home() {
           {/* Seção inferior com informações de parceiros e copyright */}
           <div className="border-t border-gray-300 mt-10 pt-6">
             <p className="text-sm text-center mb-2 text-gray-700">
-              Responsáveis pela Rede: UFAC e MPAC | Apoio Técnico e Financeiro: IPAM
+              Responsáveis pela Rede: UFAC e MPAC | Cooperação Técnico-Científica: INPE e Woodwell | Apoio Técnico e Financeiro: IPAM
             </p>
             <p className="text-sm text-center text-gray-600">
               © {new Date().getFullYear()} LabGAMA - UFAC. Todos os direitos reservados.

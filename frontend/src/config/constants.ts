@@ -11,6 +11,8 @@ export const EXTERNAL_LINKS = {
   MPAC: 'https://www.mpac.mp.br/',
   UFAC: 'http://www.ufac.br/',
   IPAM: 'https://ipam.org.br/',
+  INPE: 'https://www.gov.br/inpe/pt-br',
+  WOODWELL: 'https://www.woodwellclimate.org/',
   
   // Ferramentas e Frameworks
   PYTHON: 'https://www.python.org/',
