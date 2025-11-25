@@ -22,9 +22,9 @@ export function Sidebar(){
         <div className="flex w-full flex-col bg-muted/40">
             <aside className="fixed inset-y-0 left-0 z-10 w-56 hidden border-r bg-gradient-to-b from-gray-950 via-gray-900 to-gray-700 sm:flex">
                 <nav className="flex flex-col gap-6 px-4 py-6 text-base">
-                    <div className="border-b border-gray-600 pb-4 mb-2">
+                    <div className="border-b border-gray-600 pb-6 mb-2">
                         <Link href="/" className="flex items-center justify-center text-white hover:text-gray-200 transition-colors" prefetch={false}> 
-                            <Image alt="Logo Acre Qualidade do Ar" src="/navbarLogo.png" height={60} width={60} className="transition-all"/>
+                            <Image alt="Logo Acre Qualidade do Ar" src="/navbarLogo.png" height={120} width={120} className="transition-all hover:scale-105"/>
                             <span className="sr-only">Logo do Projeto</span>
                         </Link>
                     </div>
@@ -96,9 +96,9 @@ export function Sidebar(){
                                 <SheetTitle>Menu de Navegação</SheetTitle>
                             </VisuallyHidden>
                             <nav className="flex flex-col gap-6 pt-6">
-                                <div className="border-b border-gray-600 pb-4 mb-2">
+                                <div className="border-b border-gray-600 pb-5 mb-2">
                                     <Link href="/" onClick={handleNavigation} className="flex items-center justify-center text-white hover:text-gray-200 transition-colors" prefetch={false}> 
-                                        <Image alt="Logo Acre Qualidade do Ar" src="/navbarLogo.png" height={50} width={50} className="transition-all"/>
+                                        <Image alt="Logo Acre Qualidade do Ar" src="/navbarLogo.png" height={90} width={90} className="transition-all hover:scale-105"/>
                                         <span className="sr-only">Logo do Projeto</span>
                                     </Link>
                                 </div>
