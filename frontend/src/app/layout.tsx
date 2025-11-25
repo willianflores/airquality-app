@@ -33,7 +33,10 @@ export default function RootLayout({
       >
         <AuthProvider>
           <Sidebar/>
-          {children}
+          {/* Padding-top apenas no mobile para compensar navbar fixo */}
+          <div className="pt-16 sm:pt-0">
+            {children}
+          </div>
         </AuthProvider>
       </body>
     </html>

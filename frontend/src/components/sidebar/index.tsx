@@ -84,7 +84,7 @@ export function Sidebar(){
             </aside>
 
             <div className="sm:hidden flex flex-col">
-                <header className="sticky top-0 z-30 flex h-16 items-center px-4 border-b bg-background gap-4">
+                <header className="fixed top-0 left-0 right-0 z-50 flex h-16 items-center px-4 border-b bg-white shadow-md backdrop-blur-sm gap-4">
                     <Sheet open={isOpen} onOpenChange={setIsOpen}>
                         <SheetTrigger className="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors">
                                 <Menu className="h-6 w-6 text-gray-700"/>
