@@ -10,6 +10,7 @@ export const EXTERNAL_LINKS = {
   // Instituições
   MPAC: 'https://www.mpac.mp.br/',
   UFAC: 'http://www.ufac.br/',
+  LABGAMA: 'https://www.ufac.br/labgama',
   IPAM: 'https://ipam.org.br/',
   INPE: 'https://www.gov.br/inpe/pt-br',
   WOODWELL: 'https://www.woodwellclimate.org/',

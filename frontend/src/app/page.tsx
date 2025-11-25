@@ -416,7 +416,7 @@ export default function Home() {
             {/* Seção LabGAMA */}
             <div>
               <Link 
-                href="https://www.ufac.br/labgama"
+                href={EXTERNAL_LINKS.LABGAMA}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center mb-4 hover:opacity-80 transition-opacity"
@@ -437,12 +437,12 @@ export default function Home() {
               </p>
               <p className="text-sm mb-2">
                 <Link 
-                  href={EXTERNAL_LINKS.UFAC}
+                  href={EXTERNAL_LINKS.LABGAMA}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-orange-600 flex items-center text-gray-800"
                 >
-                  <span className="mr-2">Visite o site da UFAC</span>
+                  <span className="mr-2">Visite o site do LabGAMA</span>
                   <ExternalLink className="h-4 w-4" />
                 </Link>
               </p>
