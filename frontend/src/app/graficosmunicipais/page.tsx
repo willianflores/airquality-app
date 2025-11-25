@@ -11,7 +11,7 @@ function LoadingSpinner() {
   return (
     <div className="flex items-center justify-center p-8">
       <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
-      <span className="ml-2 text-gray-600">Carregando dados...</span>
+      <span className="ml-2 text-base text-gray-600">Carregando dados...</span>
     </div>
   );
 }
