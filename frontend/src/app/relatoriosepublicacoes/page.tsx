@@ -30,22 +30,22 @@ export default function RelatoriosPublicacoes() {
   };
 
   return (
-    <main className="sm:ml-56 sm:p-4 ml-2 p-2 min-h-screen bg-gray-50">
+    <main className="sm:ml-56 sm:p-4 md:p-6 ml-2 p-2 min-h-screen bg-gray-50">
       {/* Header moderno da página */}
-      <div className="mb-8">
+      <div className="mb-8 md:mb-10">
         <div className="text-center">
           <div className="mb-4">
-            <h1 className="text-4xl font-bold text-gray-900">
+            <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold text-gray-900">
               Publicações e Relatórios
             </h1>
           </div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-lg text-gray-600 max-w-3xl mx-auto">
             Explore nossa coleção de relatórios técnicos, estudos científicos e publicações sobre qualidade do ar e queimadas no Estado do Acre
           </p>
         </div>
         
         {/* Estatísticas dinâmicas */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-4 mt-8 max-w-4xl mx-auto">
           <div className="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
             <div className="text-2xl font-bold text-orange-600">{stats.total}</div>
             <div className="text-sm text-gray-600">Publicações</div>

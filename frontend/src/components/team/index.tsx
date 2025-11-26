@@ -9,15 +9,15 @@ import { Card, CardContent, CardDescription, CardHeader } from "../ui/card";
 
 export function Team () {
     return (
-        <section className="bg-backgroundWhite py-10 px-6">
-            <div className="pb-10">
-                <h2 className="text-center text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 ">
-                    Equipe de Pesquisadores Envolvidos na Iniciativa
+        <section className="bg-backgroundWhite py-10 md:py-12 px-6 md:px-8">
+            <div className="pb-10 md:pb-12">
+                <h2 className="text-center text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-gray-900 ">
+                    Equipe Envolvida na Iniciativa
                 </h2>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-10 my-1">
-                <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl w-full sm:w-[280px]">
+            <div className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-10 my-1">
+                <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl w-full sm:w-[280px] md:w-[240px] lg:w-[280px]">
                     <CardContent className="my-5  py-[50px] px-[20px] flex flex-col items-center text-center ">
                         <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src="/teamImg/willian-profile-grey-crop.jpg" alt="Foto do pesquisador Willian" width={250} height={250} />
                         <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
@@ -316,7 +316,7 @@ export function Team () {
                     
                         <ul className="flex gap-2 my-6">
                             <li className="inline-block m-0 transition-all duration-300 ease-in-out p-[8px] w-[34px] h-[34px] text-[18px] leading-[18px] text-white bg-instagram rounded-full">
-                                <Link href="Paulo Henrique da Silva Souza" target="_blank" className="">
+                                <Link href="https://www.instagram.com/mpacre/?igsh=aDFtbnhvNWE5MzZm#" target="_blank" className="">
                                 <FaInstagram />
                                 </Link>
                             </li>

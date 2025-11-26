@@ -49,13 +49,13 @@ function ComponentWrapper({
 
 export default function GraficosGerais() {
   return (
-    <main className="sm:ml-56 sm:p-4 ml-2 p-2 min-h-screen bg-gray-50">
+    <main className="sm:ml-56 sm:p-4 md:p-6 ml-2 p-2 min-h-screen bg-gray-50">
       {/* Header da página */}
-      <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+      <div className="mb-6 md:mb-8">
+        <h1 className="text-2xl sm:text-3xl md:text-3xl font-bold text-gray-900 mb-2">
           Gráficos Gerais
         </h1>
-        <p className="text-gray-600">
+        <p className="text-sm sm:text-base md:text-base text-gray-600">
           Visualização geral da qualidade do ar em todos os municípios do Acre
         </p>
       </div>
@@ -63,8 +63,8 @@ export default function GraficosGerais() {
       {/* Gráfico principal - Estado */}
       <section className="mb-8">
         <Card className="shadow-sm">
-          <CardContent className="p-6">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">
+          <CardContent className="p-4 md:p-5 lg:p-6">
+            <h2 className="text-lg md:text-xl font-semibold text-gray-800 mb-4">
               Evolução da Qualidade do Ar por Município
             </h2>
             <Suspense fallback={<LoadingSpinner />}>
@@ -75,7 +75,7 @@ export default function GraficosGerais() {
       </section>
 
       {/* Grid de gráficos secundários */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-6">
         {/* Heatmap */}
         <Suspense fallback={<LoadingSpinner />}>
           <Heatmap />
@@ -90,8 +90,8 @@ export default function GraficosGerais() {
       {/* Informações adicionais */}
       <section className="mt-8">
         <Card className="shadow-sm">
-          <CardContent className="p-6">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">
+          <CardContent className="p-4 md:p-5 lg:p-6">
+            <h2 className="text-lg md:text-xl font-semibold text-gray-800 mb-4">
               Sobre os Dados
             </h2>
             <div className="text-sm text-gray-600 space-y-2">

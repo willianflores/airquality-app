@@ -48,7 +48,7 @@ function ComponentWrapper({
 
 export default function GraficosMunicipais() {
   return (
-    <main className="sm:ml-56 sm:p-4 ml-2 p-2">
+    <main className="sm:ml-56 sm:p-4 md:p-6 ml-2 p-2">
       {/* Gráfico de seleção de município */}
       <section className="text-2xl w-full">
         <Suspense fallback={<LoadingSpinner />}>

@@ -48,19 +48,19 @@ export default function Home() {
   return (
     <main className="sm:ml-56 min-h-screen bg-gradient-to-br from-orange-50 to-orange-100" role="main" aria-label="Página inicial do Portal de Qualidade do Ar do Acre">
       {/* Hero Section - Cards principais com melhor responsividade */}
-      <section className="bg-backgroundGray py-6 lg:py-12" aria-labelledby="hero-section">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+      <section className="bg-backgroundGray py-6 md:py-8 lg:py-12" aria-labelledby="hero-section">
+        <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-6 lg:gap-8">
           {/* Card do Mapa */}
           <Card className="shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-orange-500">
             <CardHeader className="pb-4">
               <div className="flex items-center justify-center"> 
-                <CardTitle className="text-lg sm:text-xl lg:text-2xl text-gray-800 text-center font-semibold">
+                <CardTitle className="text-lg sm:text-xl md:text-xl lg:text-2xl text-gray-800 text-center font-semibold">
                   Monitoramento da Qualidade do Ar no Acre
                 </CardTitle>
               </div>
             </CardHeader>
-            <CardContent className="p-4 lg:p-6">
+            <CardContent className="p-4 md:p-5 lg:p-6">
               <Suspense fallback={<LoadingSpinner className="h-64" />}>
                 <PurpleAirMap />
               </Suspense>
@@ -71,19 +71,19 @@ export default function Home() {
           <Card className="shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-orange-600">
             <CardHeader className="pb-4">
               <div className="flex items-center justify-center"> 
-                <CardTitle className="text-lg sm:text-xl lg:text-2xl text-gray-800 text-center font-semibold">
+                <CardTitle className="text-lg sm:text-xl md:text-xl lg:text-2xl text-gray-800 text-center font-semibold">
                   Escalas de Qualidade do Ar
                 </CardTitle>
               </div>
             </CardHeader>
-            <CardContent className="p-4 lg:p-6">
+            <CardContent className="p-4 md:p-5 lg:p-6">
               <AqTable/>
             </CardContent>
           </Card>
         </div>
 
         {/* Call-to-Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 lg:mt-12">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 md:mt-10 lg:mt-12">
           <Button asChild size="lg" className="shadow-md hover:shadow-lg">
             <Link href="/graficosgerais" aria-label="Visualizar gráficos gerais da qualidade do ar">
               <ChartNoAxesCombined className="mr-2 h-5 w-5" />
@@ -106,17 +106,17 @@ export default function Home() {
         </div>
       </section>
       {/* Seção sobre a Rede de Monitoramento */}
-      <section className="bg-white py-12 lg:py-16" aria-labelledby="monitoring-network-title">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-white py-12 md:py-14 lg:py-16" aria-labelledby="monitoring-network-title">
+        <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 id="monitoring-network-title" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 id="monitoring-network-title" className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               A Rede de Monitoramento da Qualidade do Ar do Acre
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Conheça a maior rede de monitoramento da qualidade do ar da Amazônia
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-8">
             {/* Card 1 - Estabelecimento da Rede */}
             <Card className="shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-orange-50 to-orange-100 border-l-4 border-orange-500">
               <CardHeader className="pb-4">
@@ -272,10 +272,10 @@ export default function Home() {
       </section>
 
       {/* Seção de Parceiros Institucionais */}
-      <section className="bg-white py-12 lg:py-16" aria-labelledby="partners-title">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-white py-12 md:py-14 lg:py-16" aria-labelledby="partners-title">
+        <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 id="partners-title" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 id="partners-title" className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Parceiros Institucionais
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -284,13 +284,13 @@ export default function Home() {
           </div>
           
           {/* Grid responsivo: empilhado no mobile, lado a lado no desktop */}
-          <div className="grid grid-cols-1 xl:grid-cols-3 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-16">
             {/* Grupo 1: Responsáveis pela Rede */}
             <div className="flex flex-col">
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 text-center mb-6 lg:mb-8">
+              <h3 className="text-xl sm:text-2xl md:text-xl lg:text-2xl font-semibold text-gray-800 text-center mb-6 md:mb-6 lg:mb-8">
                 Coordenação da Rede
               </h3>
-              <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-8">
+              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-6 lg:gap-8">
                 {/* UFAC */}
                 <Link 
                   href={EXTERNAL_LINKS.UFAC}
@@ -299,13 +299,13 @@ export default function Home() {
                   className="flex items-center justify-center transition-all duration-300 hover:scale-105 hover:opacity-80"
                   aria-label="Visitar site da Universidade Federal do Acre"
                 >
-                  <div className="relative w-44 h-28 sm:w-48 sm:h-32">
+                  <div className="relative w-44 h-28 sm:w-48 sm:h-32 md:w-44 md:h-28 lg:w-48 lg:h-32">
                     <Image
                       src="/partners/UFAC.png"
                       alt="Logo da Universidade Federal do Acre - UFAC"
                       fill
                       className="object-contain"
-                      sizes="(max-width: 640px) 176px, 192px"
+                      sizes="(max-width: 640px) 176px, (max-width: 1024px) 176px, 192px"
                     />
                   </div>
                 </Link>
@@ -318,13 +318,13 @@ export default function Home() {
                   className="flex items-center justify-center transition-all duration-300 hover:scale-105 hover:opacity-80"
                   aria-label="Visitar site do Ministério Público do Estado do Acre"
                 >
-                  <div className="relative w-44 h-28 sm:w-48 sm:h-32">
+                  <div className="relative w-44 h-28 sm:w-48 sm:h-32 md:w-44 md:h-28 lg:w-48 lg:h-32">
                     <Image
                       src="/partners/MPAC.jpeg"
                       alt="Logo do Ministério Público do Estado do Acre - MPAC"
                       fill
                       className="object-contain"
-                      sizes="(max-width: 640px) 176px, 192px"
+                      sizes="(max-width: 640px) 176px, (max-width: 1024px) 176px, 192px"
                     />
                   </div>
                 </Link>
@@ -333,10 +333,10 @@ export default function Home() {
 
             {/* Grupo 2: Cooperação Técnico-Científica */}
             <div className="flex flex-col">
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 text-center mb-6 lg:mb-8">
+              <h3 className="text-xl sm:text-2xl md:text-xl lg:text-2xl font-semibold text-gray-800 text-center mb-6 md:mb-6 lg:mb-8">
                 Cooperação Técnico-Científica
               </h3>
-              <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-8">
+              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-6 lg:gap-8">
                 {/* INPE */}
                 <Link 
                   href={EXTERNAL_LINKS.INPE}
@@ -345,13 +345,13 @@ export default function Home() {
                   className="flex items-center justify-center transition-all duration-300 hover:scale-105 hover:opacity-80"
                   aria-label="Visitar site do Instituto Nacional de Pesquisas Espaciais"
                 >
-                  <div className="relative w-44 h-28 sm:w-48 sm:h-32">
+                  <div className="relative w-44 h-28 sm:w-48 sm:h-32 md:w-44 md:h-28 lg:w-48 lg:h-32">
                     <Image
                       src="/partners/INPE.png"
                       alt="Logo do Instituto Nacional de Pesquisas Espaciais - INPE"
                       fill
                       className="object-contain"
-                      sizes="(max-width: 640px) 176px, 192px"
+                      sizes="(max-width: 640px) 176px, (max-width: 1024px) 176px, 192px"
                     />
                   </div>
                 </Link>
@@ -364,13 +364,13 @@ export default function Home() {
                   className="flex items-center justify-center transition-all duration-300 hover:scale-105 hover:opacity-80"
                   aria-label="Visitar site do Woodwell Climate Research Center"
                 >
-                  <div className="relative w-44 h-28 sm:w-48 sm:h-32">
+                  <div className="relative w-44 h-28 sm:w-48 sm:h-32 md:w-44 md:h-28 lg:w-48 lg:h-32">
                     <Image
                       src="/partners/woodwell_climate_research_center.png"
                       alt="Logo do Woodwell Climate Research Center"
                       fill
                       className="object-contain"
-                      sizes="(max-width: 640px) 176px, 192px"
+                      sizes="(max-width: 640px) 176px, (max-width: 1024px) 176px, 192px"
                     />
                   </div>
                 </Link>
@@ -379,10 +379,10 @@ export default function Home() {
 
             {/* Grupo 3: Apoio Técnico e Financeiro */}
             <div className="flex flex-col">
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 text-center mb-6 lg:mb-8">
+              <h3 className="text-xl sm:text-2xl md:text-xl lg:text-2xl font-semibold text-gray-800 text-center mb-6 md:mb-6 lg:mb-8">
                 Apoio Técnico e Financeiro
               </h3>
-              <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-8">
+              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-6 lg:gap-8">
                 {/* IPAM */}
                 <Link 
                   href={EXTERNAL_LINKS.IPAM}
@@ -391,13 +391,13 @@ export default function Home() {
                   className="flex items-center justify-center transition-all duration-300 hover:scale-105 hover:opacity-80"
                   aria-label="Visitar site do Instituto de Pesquisa Ambiental da Amazônia"
                 >
-                  <div className="relative w-44 h-28 sm:w-48 sm:h-32">
+                  <div className="relative w-44 h-28 sm:w-48 sm:h-32 md:w-44 md:h-28 lg:w-48 lg:h-32">
                     <Image
                       src="/partners/IPAM.png"
                       alt="Logo do Instituto de Pesquisa Ambiental da Amazônia - IPAM"
                       fill
                       className="object-contain"
-                      sizes="(max-width: 640px) 176px, 192px"
+                      sizes="(max-width: 640px) 176px, (max-width: 1024px) 176px, 192px"
                       priority
                       unoptimized
                     />
