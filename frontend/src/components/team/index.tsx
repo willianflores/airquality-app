@@ -16,8 +16,8 @@ export function Team () {
                 </h2>
             </div>
 
-            <div className=" grid grid-cols-1 sm:grid-cols-5 gap-10 my-1">
-                <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl">
+            <div className="flex flex-wrap justify-center gap-10 my-1">
+                <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl w-full sm:w-[280px]">
                     <CardContent className="my-5  py-[50px] px-[20px] flex flex-col items-center text-center ">
                         <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src="/teamImg/willian-profile-grey-crop.jpg" alt="Foto do pesquisador Willian" width={250} height={250} />
                         <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
@@ -68,7 +68,7 @@ export function Team () {
                     </CardContent>                      
                 </Card>
 
-                <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl">
+                <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl w-full sm:w-[280px]">
                     <CardContent className="my-5  py-[50px] px-[20px] flex flex-col items-center text-center ">
                         <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src="/teamImg/sonaira-silva-grey-crop.jpg" alt="Foto da pesquisadora Sonaira" width={250} height={250} />
                         <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
@@ -119,13 +119,13 @@ export function Team () {
                     </CardContent>                      
                 </Card>
                 
-                <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl">
+                <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl w-full sm:w-[280px]">
                     <CardContent className="my-5  py-[50px] px-[20px] flex flex-col items-center text-center ">
                         <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src="/teamImg/liana-anderson-grey-crop.jpg" alt="Foto da pesquisadora Liana" width={250} height={250} />
                         <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
                             LIANA ANDERSON
                         </h3>
-                        <p className="m-0 p-0 text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">Professora / Pesquisadora</p>
+                        <p className="m-0 p-0 text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">Pesquisadora</p>
                         <p className="m-0 p-0  text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">INPE</p>
                     
                         <ul className="flex gap-2 my-6">
@@ -170,7 +170,7 @@ export function Team () {
                     </CardContent>                      
                 </Card>
 
-                <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl">
+                <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl w-full sm:w-[280px]">
                     <CardContent className="my-5  py-[50px] px-[20px] flex flex-col items-center text-center ">
                         <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src="/teamImg/foster-brown-grey-crop.jpg" alt="Foto do pesquisador Foster" width={250} height={250} />
                         <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
@@ -212,7 +212,7 @@ export function Team () {
                     </CardContent>                      
                 </Card>
 
-                <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl">
+                <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl w-full sm:w-[280px]">
                     <CardContent className="my-5  py-[50px] px-[20px] flex flex-col items-center text-center ">
                         <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src="/teamImg/alejandro-duarte-grey-crop.jpg" alt="Foto do pesquisador Alejandro" width={250} height={250} />
                         <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
@@ -238,6 +238,90 @@ export function Team () {
                             </li>
                             <li className="inline-block m-0 transition-all duration-300 ease-in-out p-[8px] w-[34px] h-[34px] text-[18px] leading-[18px] text-white bg-email rounded-full">
                                 <Link href="mailto:alejandro.duarte@ufac.br" target="_blank" className="">
+                                <MdEmail />
+                                </Link>
+                            </li>
+                        </ul> 
+
+                        <div className="relative w-full flex justify-center">
+                            <div className="inline-block align-middle h-[3px] w-[50px] bg-gradient-to-r from-[#6b02FF] to-[#985BEF]"></div>
+                        </div>                 
+                    </CardContent>                      
+                </Card>
+
+                <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl w-full sm:w-[280px]">
+                    <CardContent className="my-5  py-[50px] px-[20px] flex flex-col items-center text-center ">
+                        <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src="/teamImg/dra_rita.png" alt="Foto do pesquisador Alejandro" width={250} height={250} />
+                        <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
+                            RITA DE CASSIA LIMA
+                        </h3>
+                        <p className="m-0 p-0 text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">Procuradora de Justiça</p>
+                        <p className="m-0 p-0  text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">MPAC</p>
+                    
+                        <ul className="flex gap-2 my-6">
+                            <li className="inline-block m-0 transition-all duration-300 ease-in-out p-[8px] w-[34px] h-[34px] text-[18px] leading-[18px] text-white bg-instagram rounded-full">
+                                <Link href="https://www.instagram.com/rita.cassia.nogueira/" target="_blank" className="">
+                                <FaInstagram />
+                                </Link>
+                            </li>
+                            <li className="inline-block m-0 transition-all duration-300 ease-in-out p-[8px] w-[34px] h-[34px] text-[18px] leading-[18px] text-white bg-email rounded-full">
+                                <Link href="mailto:rlima@mpac.mp.br" target="_blank" className="">
+                                <MdEmail />
+                                </Link>
+                            </li>
+                        </ul> 
+
+                        <div className="relative w-full flex justify-center">
+                            <div className="inline-block align-middle h-[3px] w-[50px] bg-gradient-to-r from-[#6b02FF] to-[#985BEF]"></div>
+                        </div>                 
+                    </CardContent>                      
+                </Card>
+
+                <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl w-full sm:w-[280px]">
+                    <CardContent className="my-5  py-[50px] px-[20px] flex flex-col items-center text-center ">
+                        <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src="/teamImg/dr_rolim.png" alt="Foto do pesquisador Alejandro" width={250} height={250} />
+                        <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
+                            LUIS HENRIQUE ROLIM
+                        </h3>
+                        <p className="m-0 p-0 text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">Promotor de Justiça</p>
+                        <p className="m-0 p-0  text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">MPAC</p>
+                    
+                        <ul className="flex gap-2 my-6">
+                            <li className="inline-block m-0 transition-all duration-300 ease-in-out p-[8px] w-[34px] h-[34px] text-[18px] leading-[18px] text-white bg-instagram rounded-full">
+                                <Link href="https://www.instagram.com/luis_rolim72/" target="_blank" className="">
+                                <FaInstagram />
+                                </Link>
+                            </li>
+                            <li className="inline-block m-0 transition-all duration-300 ease-in-out p-[8px] w-[34px] h-[34px] text-[18px] leading-[18px] text-white bg-email rounded-full">
+                                <Link href="mailto:lrolim@mpac.mp.br" target="_blank" className="">
+                                <MdEmail />
+                                </Link>
+                            </li>
+                        </ul> 
+
+                        <div className="relative w-full flex justify-center">
+                            <div className="inline-block align-middle h-[3px] w-[50px] bg-gradient-to-r from-[#6b02FF] to-[#985BEF]"></div>
+                        </div>                 
+                    </CardContent>                      
+                </Card>
+
+                <Card className="bg-backgroundGray transition duration-300 ease-in-out hover:bg-backgroundcard group shadow-2xl w-full sm:w-[280px]">
+                    <CardContent className="my-5  py-[50px] px-[20px] flex flex-col items-center text-center ">
+                        <Image className="rounded-full max-h-[250px] max-w-[250px] p-[5px] bg-backgroundWhite" src="/teamImg/paulo_henrique.png" alt="Foto do pesquisador Alejandro" width={250} height={250} />
+                        <h3 className="mt-5 mx-0 text-zinc-800 text-lg font-bold uppercase transition-all duration-300 ease-in-out group-hover:text-white">
+                            PAULO HENRIQUE SOUZA
+                        </h3>
+                        <p className="m-0 p-0 text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">Analista Ministerial</p>
+                        <p className="m-0 p-0  text-backgroundtextcolor italic transition-all duration-300 ease-in-out group-hover:text-white">MPAC</p>
+                    
+                        <ul className="flex gap-2 my-6">
+                            <li className="inline-block m-0 transition-all duration-300 ease-in-out p-[8px] w-[34px] h-[34px] text-[18px] leading-[18px] text-white bg-instagram rounded-full">
+                                <Link href="Paulo Henrique da Silva Souza" target="_blank" className="">
+                                <FaInstagram />
+                                </Link>
+                            </li>
+                            <li className="inline-block m-0 transition-all duration-300 ease-in-out p-[8px] w-[34px] h-[34px] text-[18px] leading-[18px] text-white bg-email rounded-full">
+                                <Link href="mailto:psouza@mpac.mp.br" target="_blank" className="">
                                 <MdEmail />
                                 </Link>
                             </li>
