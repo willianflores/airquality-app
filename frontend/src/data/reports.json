@@ -1,79 +1,100 @@
 [
-    {
-        "title": "Relatório Executivo: monitoramento da qualidade do ar no Estado do Acre - 2019",
-        "description": "O relatório contém uma análise da qualidade do ar no Estado do Acre nos últimos sete meses de 2019. Os resultados foram individualizados por municípios.",
-        "imageUrl": "/reports/img/20200401_Relatorio_Qualidade_do_Ar_2019.jpg",
-        "fileUrl": "/reports/pdf/20200401_Relatorio_Qualidade_do_Ar_2019_ver_final.pdf",
-        "date": "01/04/2020"
-    },
-    {
-        "title": "Relatório Executivo: queimadas 2019",
-        "description": "Relatório com o diagnóstico da situação das queimadas em 2019 no Estado do Acre. Foi feita uma análise geral e por municípios das queimadas agrícolas.",
-        "imageUrl": "/reports/img/20200201_RelatorioQueimadas2019.jpg",
-        "fileUrl": "/reports/pdf/20200201_RelatorioQueimadas2019.pdf",
-        "date": "01/02/2020"
-    },
-    {
-        "title": "COVID-19 e queimadas: um duplo desafio ao sistema único de saúde",
-        "description": "A nota técnica discute a relação entre intensificação das queimadas na Amazônia e a saúde pública em tempos de pandemia, com destaque para as áreas rurais.",
-        "imageUrl": "/reports/img/20200508_NotaTecnica-Cientifica.jpg",
-        "fileUrl": "/reports/pdf/20200508_NotaTecnica-Cientifica.pdf",
-        "date": "08/05/2020"
-    },
-    {
-        "title": "O desafio do Brasil para conter o desmatamento e as queimadas na Amazônia durante a pandemia por COVID-19 em 2020: implicações ambientais, sociais e sua governança",
-        "description": "Nota técnica sobre o desmatamento na Amazônia, a interação com o clima, o potencial de intensificar as queimadas e incêndios florestais e a COVID-19.",
-        "imageUrl": "/reports/img/20200525_AragaoetalDesmatamentoFogoeCOVID-19naAmazonia-SEMDOI.jpg",
-        "fileUrl": "/reports/pdf/20200525_AragaoetalDesmatamentoFogoeCOVID-19naAmazonia-SEMDOI.pdf",
-        "date": "25/05/2020"
-    },
-    {
-        "title": "Policy Briaf: Desafios e perspectivas do monitoramento da qualidade do ar na Amazônia Legal: uma visão integrada entre tecnologias, contextos socioambientais e políticas públicas",
-        "description": "A publicação traz um panorama sobre o monitoramento e situação atual da qualidade do ar na Amazônia.",
-        "imageUrl": "/reports/img/20241031_Policy-Brief-Desafios-e-perspectivas-do-monitoramento-da-qualidade-do-ar-na-Amazonia-Legal-Respira-Amazonia.jpg",
-        "fileUrl": "/reports/pdf/20241031_Policy-Brief-Desafios-e-perspectivas-do-monitoramento-da-qualidade-do-ar-na-Amazonia-Legal-Respira-Amazonia.pdf",
-        "date": "31/10/2024"
-    },
-    {
-        "title": "Relatório Executivo: queimadas 2020 no Estado do ACRE",
-        "description": "Relatório com o diagnóstico da situação das queimadas no ano de 2020 no Estado do Acre.",
-        "imageUrl": "/reports/img/20210301_RelatorioQueimadas2020.jpg",
-        "fileUrl": "/reports/pdf/20210301_RelatorioQueimadas2020.pdf",
-        "date": "01/03/2021"
-    },
-    {
-        "title": "Nota Técnica: Importância do Monitoramento da Qualidade do Ar na Amazônia",
-        "description": "A nota técnica trata da importância do monitoramento da qualidade do ar na Amazônia, com destaque para a Rede de Qualidade do Ar do Acre.",
-        "imageUrl": "/reports/img/20210817_NotaTecnica_QualidadedoAr_Ufac_MPAC_final.jpg",
-        "fileUrl": "/reports/pdf/20210817_NotaTecnica_QualidadedoAr_Ufac_MPAC_final.pdf",
-        "date": "17/08/2021"
-    },
-    {
-        "title": "Relatório Executivo: queimadas 2021 no Estado do Acre",
-        "description": "Relatório com o diagnóstico da situação das queimadas no ano de 2021 no Estado do Acre.",
-        "imageUrl": "/reports/img/20220301_RelatorioQueimadas2021.jpg",
-        "fileUrl": "/reports/pdf/20220301_RelatorioQueimadas2021.pdf",
-        "date": "01/03/2022"
-    },
-    {
-        "title": "Padrões de Qualidade do Ar no Estado do Acre, Brasil",
-        "description": "O artigo analisa os padrões de qualidade do ar no Estado do Acre baseado nos conjuto de dados Rede de Qualidade do Ar do Acre.",
-        "imageUrl": "/reports/img/20230405_Artigo_sbsr_2023_QualidadeAr_WillianFlores.jpg",
-        "fileUrl": "/reports/pdf/20230405_Artigo_sbsr_2023_QualidadeAr_WillianFlores.pdf",
-        "date": "05/04/2023"
-    },
-    {
-        "title": "Relatório Executivo: queimadas 2022 no Estado do Acre",
-        "description": "Relatório com o diagnóstico da situação das queimadas no ano de 2022 no Estado do Acre.",
-        "imageUrl": "/reports/img/20230501_RelatorioQueimadas2022.jpg",
-        "fileUrl": "/reports/pdf/20230501_RelatorioQueimadas2022.pdf",
-        "date": "01/05/2023"
-    },
-    {
-        "title": "Queimadas e incêndios florestais na região fronteiriça Brasil, Peru e Bolívia em 2021 na Amazônia Sul Ocidental",
-        "description": "O artigo apresenta o diagnóstico da situação das queimadas e incêndios florestais na Amazônia Sul Ocidental no ano de 2021.",
-        "imageUrl": "/reports/img/20230602_Artigo_sicas_Silvaetal_queimadas.jpg",
-        "fileUrl": "/reports/pdf/20230602_Artigo_sicas_Silvaetal_queimadas.pdf",
-        "date": "20/06/2023"
-    }      
+  {
+    "title": "Onde há fumaça, há fogo!",
+    "description": "O trabalho analisou a relação entre desmatamento, degradação florestal, incêndios e poluição do ar na Amazônia, destacando seus impactos ambientais, climáticos e na saúde humana.",
+    "imageUrl": "/reports/img/20230721_onde-ha-fumaca-ha-fogo.jpg",
+    "fileUrl": "/reports/pdf/20230721_onde-ha-fumaca-ha-fogo.pdf",
+    "date": "21/07/2023"
+  },
+  {
+    "title": "Fogo em foco: diagnóstico dos incêndios no Brasil em 2024/2025",
+    "description": "O trabalho analisou a extensão, a distribuição espacial e os impactos socioambientais dos incêndios ocorridos no Brasil entre 2024 e 2025.",
+    "imageUrl": "/reports/img/20250601_fogo-em-foco-diagnostico-dos-incendios-no-brasil-e.jpg",
+    "fileUrl": "/reports/pdf/20250601_fogo-em-foco-diagnostico-dos-incendios-no-brasil-e.pdf",
+    "date": "01/06/2025"
+  },
+  {
+    "title": "Relatório executivo: queimadas 2024 no Estado do Acre",
+    "description": "Relatório com o diagnóstico da situação das queimadas em 2024 no Estado do Acre.",
+    "imageUrl": "/reports/img/20250901_relatorio-executivo-queimadas-2024-no-estado-do-ac.jpg",
+    "fileUrl": "/reports/pdf/20250901_relatorio-executivo-queimadas-2024-no-estado-do-ac.pdf",
+    "date": "01/09/2025"
+  },
+  {
+    "title": "Relatório Executivo: monitoramento da qualidade do ar no Estado do Acre - 2019",
+    "description": "O relatório contém uma análise da qualidade do ar no Estado do Acre nos últimos sete meses de 2019. Os resultados foram individualizados por municípios.",
+    "imageUrl": "/reports/img/20200401_Relatorio_Qualidade_do_Ar_2019.jpg",
+    "fileUrl": "/reports/pdf/20200401_Relatorio_Qualidade_do_Ar_2019_ver_final.pdf",
+    "date": "01/04/2020"
+  },
+  {
+    "title": "Relatório Executivo: queimadas 2019",
+    "description": "Relatório com o diagnóstico da situação das queimadas em 2019 no Estado do Acre. Foi feita uma análise geral e por municípios das queimadas agrícolas.",
+    "imageUrl": "/reports/img/20200201_RelatorioQueimadas2019.jpg",
+    "fileUrl": "/reports/pdf/20200201_RelatorioQueimadas2019.pdf",
+    "date": "01/02/2020"
+  },
+  {
+    "title": "COVID-19 e queimadas: um duplo desafio ao sistema único de saúde",
+    "description": "A nota técnica discute a relação entre intensificação das queimadas na Amazônia e a saúde pública em tempos de pandemia, com destaque para as áreas rurais.",
+    "imageUrl": "/reports/img/20200508_NotaTecnica-Cientifica.jpg",
+    "fileUrl": "/reports/pdf/20200508_NotaTecnica-Cientifica.pdf",
+    "date": "08/05/2020"
+  },
+  {
+    "title": "O desafio do Brasil para conter o desmatamento e as queimadas na Amazônia durante a pandemia por COVID-19 em 2020: implicações ambientais, sociais e sua governança",
+    "description": "Nota técnica sobre o desmatamento na Amazônia, a interação com o clima, o potencial de intensificar as queimadas e incêndios florestais e a COVID-19.",
+    "imageUrl": "/reports/img/20200525_AragaoetalDesmatamentoFogoeCOVID-19naAmazonia-SEMDOI.jpg",
+    "fileUrl": "/reports/pdf/20200525_AragaoetalDesmatamentoFogoeCOVID-19naAmazonia-SEMDOI.pdf",
+    "date": "25/05/2020"
+  },
+  {
+    "title": "Policy Briaf: Desafios e perspectivas do monitoramento da qualidade do ar na Amazônia Legal: uma visão integrada entre tecnologias, contextos socioambientais e políticas públicas",
+    "description": "A publicação traz um panorama sobre o monitoramento e situação atual da qualidade do ar na Amazônia.",
+    "imageUrl": "/reports/img/20241031_Policy-Brief-Desafios-e-perspectivas-do-monitoramento-da-qualidade-do-ar-na-Amazonia-Legal-Respira-Amazonia.jpg",
+    "fileUrl": "/reports/pdf/20241031_Policy-Brief-Desafios-e-perspectivas-do-monitoramento-da-qualidade-do-ar-na-Amazonia-Legal-Respira-Amazonia.pdf",
+    "date": "31/10/2024"
+  },
+  {
+    "title": "Relatório Executivo: queimadas 2020 no Estado do ACRE",
+    "description": "Relatório com o diagnóstico da situação das queimadas no ano de 2020 no Estado do Acre.",
+    "imageUrl": "/reports/img/20210301_RelatorioQueimadas2020.jpg",
+    "fileUrl": "/reports/pdf/20210301_RelatorioQueimadas2020.pdf",
+    "date": "01/03/2021"
+  },
+  {
+    "title": "Nota Técnica: Importância do Monitoramento da Qualidade do Ar na Amazônia",
+    "description": "A nota técnica trata da importância do monitoramento da qualidade do ar na Amazônia, com destaque para a Rede de Qualidade do Ar do Acre.",
+    "imageUrl": "/reports/img/20210817_NotaTecnica_QualidadedoAr_Ufac_MPAC_final.jpg",
+    "fileUrl": "/reports/pdf/20210817_NotaTecnica_QualidadedoAr_Ufac_MPAC_final.pdf",
+    "date": "17/08/2021"
+  },
+  {
+    "title": "Relatório Executivo: queimadas 2021 no Estado do Acre",
+    "description": "Relatório com o diagnóstico da situação das queimadas no ano de 2021 no Estado do Acre.",
+    "imageUrl": "/reports/img/20220301_RelatorioQueimadas2021.jpg",
+    "fileUrl": "/reports/pdf/20220301_RelatorioQueimadas2021.pdf",
+    "date": "01/03/2022"
+  },
+  {
+    "title": "Padrões de Qualidade do Ar no Estado do Acre, Brasil",
+    "description": "O artigo analisa os padrões de qualidade do ar no Estado do Acre baseado nos conjuto de dados Rede de Qualidade do Ar do Acre.",
+    "imageUrl": "/reports/img/20230405_Artigo_sbsr_2023_QualidadeAr_WillianFlores.jpg",
+    "fileUrl": "/reports/pdf/20230405_Artigo_sbsr_2023_QualidadeAr_WillianFlores.pdf",
+    "date": "05/04/2023"
+  },
+  {
+    "title": "Relatório Executivo: queimadas 2022 no Estado do Acre",
+    "description": "Relatório com o diagnóstico da situação das queimadas no ano de 2022 no Estado do Acre.",
+    "imageUrl": "/reports/img/20230501_RelatorioQueimadas2022.jpg",
+    "fileUrl": "/reports/pdf/20230501_RelatorioQueimadas2022.pdf",
+    "date": "01/05/2023"
+  },
+  {
+    "title": "Queimadas e incêndios florestais na região fronteiriça Brasil, Peru e Bolívia em 2021 na Amazônia Sul Ocidental",
+    "description": "O artigo apresenta o diagnóstico da situação das queimadas e incêndios florestais na Amazônia Sul Ocidental no ano de 2021.",
+    "imageUrl": "/reports/img/20230602_Artigo_sicas_Silvaetal_queimadas.jpg",
+    "fileUrl": "/reports/pdf/20230602_Artigo_sicas_Silvaetal_queimadas.pdf",
+    "date": "20/06/2023"
+  }
 ]
