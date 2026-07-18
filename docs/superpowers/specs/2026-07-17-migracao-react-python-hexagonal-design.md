@@ -177,6 +177,11 @@ ingestion_runs (id, source, started_at, finished_at, status, records_ingested)
 
 ## Frontend (React mobile-first)
 
+Esta seção define só a estrutura/arquitetura (páginas, componentes, camadas, breakpoint
+mobile-first) — não depende de decisões visuais do Figma. Paleta, tipografia e componentes exatos
+são decididos na Fase 4 (via port das telas atuais pro Figma + refino), como input pro código, não
+pré-requisito desta spec.
+
 ```
 frontend/
 ├── src/
