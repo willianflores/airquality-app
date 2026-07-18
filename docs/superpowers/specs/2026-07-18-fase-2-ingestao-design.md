@@ -54,6 +54,12 @@ Adapter em `adapters/outbound/purpleair/purpleair_api_client.py`:
 - Retry com backoff exponencial (reuso do padrão antigo: `maxRetries=5`, `sleepSeconds=2`)
 - Normalização de nome de campo (`.` → `_`) — mesmo mapeamento serve os dois endpoints, os nomes
   de campo são idênticos entre bulk e history (`pm2.5_atm_a` → `pm2_5_atm_a`, etc.)
+- **Sem conversão de timezone**: `time_stamp` grava exatamente como a API retorna (UTC nativo,
+  epoch/ISO). O script antigo (`getPurpleairApiHistoricalData.py`) convertia `time_stamp` pra
+  `-05:00` antes de gravar — **não replicar isso**. Decisão da Fase 1b já fixou `sensor_readings`
+  em UTC puro, conversão pra hora local só acontece na camada de agregação (continuous aggregates,
+  via `time_bucket(..., 'America/Rio_Branco')`). Vale pros dois métodos do client, `fetch_realtime`
+  e `fetch_history`.
 - API key via variável de ambiente (`PURPLEAIR_API_KEY`), nunca hardcoded — a chave antiga
   encontrada em `config.env` do app legado (`43664AA0-305C-11ED-B5AA-42010A800006`) não deve ir
   pro novo código
