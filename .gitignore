@@ -210,6 +210,7 @@ build/
 !frontend/README.md
 !**/LICENSE.md
 !**/LICENCE.md
+!docs/superpowers/specs/**/*.md
 
 # Scripts e arquivos de configuração local
 scripts/
