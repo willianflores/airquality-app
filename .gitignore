@@ -211,6 +211,7 @@ build/
 !**/LICENSE.md
 !**/LICENCE.md
 !docs/superpowers/specs/**/*.md
+!docs/superpowers/plans/**/*.md
 
 # Scripts e arquivos de configuração local
 scripts/
