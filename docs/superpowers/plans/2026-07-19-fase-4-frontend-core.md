@@ -275,7 +275,7 @@ def test_list_latest_returns_most_recent_row_per_sensor(db_session, db_connectio
 
     by_sensor = {r.sensor_index: r for r in readings}
     assert by_sensor[25549].time_stamp == datetime(2026, 1, 1, 11, 0, tzinfo=timezone.utc)
-    assert by_sensor[25549].pm2_5_corrected == 4.34
+    assert by_sensor[25549].pm2_5_corrected == 4.84  # (0.5*10-0.66 + 0.5*12-0.66) / 2 = (4.34+5.34)/2
     assert by_sensor[25550].pm2_5_corrected == 0.34
 ```
 
