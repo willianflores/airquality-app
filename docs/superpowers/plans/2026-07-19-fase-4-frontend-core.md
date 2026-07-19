@@ -251,6 +251,7 @@ git commit -m "feat(sensors): expõe latitude/longitude/sensor_index em /sensors
 ```python
 from datetime import datetime, timezone
 
+import pytest
 from sqlalchemy import text
 
 from adapters.outbound.postgres.postgres_latest_sensor_reading_repository import (
@@ -275,8 +276,10 @@ def test_list_latest_returns_most_recent_row_per_sensor(db_session, db_connectio
 
     by_sensor = {r.sensor_index: r for r in readings}
     assert by_sensor[25549].time_stamp == datetime(2026, 1, 1, 11, 0, tzinfo=timezone.utc)
-    assert by_sensor[25549].pm2_5_corrected == 4.84  # (0.5*10-0.66 + 0.5*12-0.66) / 2 = (4.34+5.34)/2
-    assert by_sensor[25550].pm2_5_corrected == 0.34
+    # (0.5*10-0.66 + 0.5*12-0.66) / 2 = (4.34+5.34)/2 = 4.84 — pytest.approx pelo mesmo motivo
+    # de precisão de ponto flutuante já documentado em test_continuous_aggregates_migration.py
+    assert by_sensor[25549].pm2_5_corrected == pytest.approx(4.84, abs=0.01)
+    assert by_sensor[25550].pm2_5_corrected == pytest.approx(0.34, abs=0.01)
 ```
 
 - [ ] **Step 2: Rodar, confirmar que falha**
@@ -391,8 +394,11 @@ def test_get_latest_by_sensor_returns_seeded_readings(client, db_connection):
     assert response.status_code == 200
     body = response.json()
     row = next(r for r in body if r["sensor_index"] == 25549)
-    assert row["pm2_5_corrected"] == 20.34
+    assert row["pm2_5_corrected"] == pytest.approx(20.34, abs=0.01)
 ```
+
+(`pytest` já precisa estar importado no topo de `test_readings_router.py` — confira antes de
+adicionar de novo; se não estiver, adicione `import pytest` junto aos demais imports do arquivo.)
 
 (`text` já está importado no topo do arquivo, junto com o resto — confira antes de adicionar de novo.)
 
