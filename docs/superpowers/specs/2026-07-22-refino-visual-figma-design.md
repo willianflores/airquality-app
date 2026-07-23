@@ -22,14 +22,23 @@ direção visual, decidida no Figma antes de voltar pro código.
 - **App antigo → screenshot/imagem estática.** Stack diferente (Next.js vs React), sem Code
   Connect configurado — reconstrução fiel como frames editáveis não compensa o esforço. Trazido
   como imagem de referência, não editável.
-- **App atual → code-to-design real** (via skill `figma-generate-design`), gerando frames Figma
-  de verdade (auto-layout, editável), já que é o nosso próprio código React — serve de base
-  editável pra desenhar a versão nova em cima.
+- **App atual → screenshot/imagem estática, igual ao legacy.** A ferramenta de code-to-design
+  automático (`generate_figma_design`) não estava disponível neste ambiente Figma MCP; reconstruir
+  manualmente via `use_figma` as 5 páginas foi avaliado como custo alto demais pro ganho (seria só
+  referência visual, não produção), então as 10 telas (5 antigo + 5 atual) entraram como imagem.
 - **Conta Figma confirmada**: `willian.flores@ufac.br` (plano student, time "A equipe de Antonio
   Willian Flores de Melo").
 - **Fluxo**: captura → montagem no Figma (10 telas: 5 antigo + 5 atual, lado a lado) → usuário
   desenha a direção nova no Figma → aprovação → nova fase de implementação (fora deste documento)
   traz o design aprovado de volta pro código via VS Code + Claude Code.
+- **Referências de estilo externas**: layout inspirado em
+  `energiaeambiente.org.br/qualidadedoar/en/` (sidebar fixa + faixa "hero" com foto/ícone,
+  conteúdo institucional em duas colunas) — cor de destaque nova no lugar do azul do IEMA ainda
+  em aberto. Fonte inicialmente inspirada no `cdc.gov` (Poppins/Nunito, confirmado via CSS real do
+  site), mas trocada por **IBM Plex Sans** (títulos/corpo) + **IBM Plex Mono** (números
+  tabulares — PM2.5, listas de sensores, timestamps de ingestão) — decisão final, por combinar
+  melhor com o caráter denso-em-dado/científico do app do que o par Poppins/Nunito, mais voltado
+  a comunicação de saúde pública geral.
 
 ## Fora de escopo
 
