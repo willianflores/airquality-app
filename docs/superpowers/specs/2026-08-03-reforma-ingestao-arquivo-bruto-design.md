@@ -104,6 +104,22 @@ que o modelo teórico projetaria — ao solicitar pontos novos, usar o consumo m
   nulo. Sem piso, cadastrar um sensor dispararia anos de histórico e um gasto grande de pontos sem
   ninguém pedir. Padrão: `ARCHIVE_DEFAULT_LOOKBACK_DAYS = 7`. Histórico profundo continua sendo
   ação deliberada pelo painel admin, que já existe.
+- **Teto de janela automática: `ARCHIVE_MAX_WINDOW_DAYS = 30`.** Se o watermark estiver mais atrás
+  que o teto, a execução busca apenas até o teto e o watermark avança progressivamente — um buraco
+  de 90 dias fecha em 3 execuções (3 horas), ainda sem intervenção. Protege o cenário "worker ficou
+  meses fora e voltou sozinho", em que a primeira execução dispararia o gasto inteiro de pontos sem
+  ninguém observando.
+
+  Não economiza pontos: as mesmas linhas são buscadas de um jeito ou de outro. O que muda é o
+  ritmo — com o teto, o alerta do healthchecks dispara e dá tempo de intervir depois do primeiro
+  pedaço, em vez de descobrir o gasto já consumado. Em operação normal o teto nunca é atingido
+  (watermark fica ~1 h atrás).
+
+  **Não confundir com `HISTORY_WINDOW_DAYS = 30`**, que já existe no client
+  (`purpleair_api_client.py:177-182`): aquele fatia um intervalo grande em várias chamadas HTTP, e
+  por isso um buraco de 90 dias tecnicamente já funciona sem o teto. O teto é decisão de job, não
+  requisito de API. Escolher 30 nos dois alinha as fronteiras: cada execução vira exatamente uma
+  chamada por sensor.
 - **Alerta via healthchecks.io.** O worker faz um ping HTTP ao fim de cada ciclo; se parar de pingar
   dentro do prazo configurado, o serviço notifica por e-mail. Escolhido em vez de SMTP próprio
   porque detecta container morto e servidor desligado — casos que um alerta gerado pelo próprio
