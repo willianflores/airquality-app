@@ -61,10 +61,15 @@ ingestão sobe definido no Compose mas não é iniciado automaticamente.
   histórico de leituras reais, admin(s) e publicações já migradas — o Postgres de produção não
   começa vazio: recebe um `pg_dump`/`pg_restore` do banco local antes de qualquer backfill (ver
   Runbook).
-- **Worker de ingestão em tempo real não inicia sozinho.** `worker/main.py` roda em loop contínuo
-  assim que o processo sobe — o Compose de produção define o serviço, mas o `docker compose up`
-  do Runbook **não inclui `worker`** na lista de serviços subidos. Só é iniciado depois, como
-  passo manual separado, mediante autorização explícita do usuário.
+- **Worker de ingestão não inicia sozinho.** Desde a reforma de ingestão de 2026-08-03,
+  `worker/main.py` roda dois jobs agendados — arquivo (`IngestArchivePurpleAir`, horário, janela
+  por watermark com piso `archive_min_start_date` e teto `archive_max_window_days`) e status
+  (`RefreshSensorStatus`, a cada 30min, grava em `sensor_status`) — não mais um processo único de
+  "tempo real" (`IngestRealtimePurpleAir` foi removido nessa reforma). O Compose de produção
+  define o serviço `worker` com `profiles: ["manual"]`, e o `docker compose up` do Runbook **não
+  inclui `worker`** na lista de serviços subidos. Só é iniciado depois, como passo manual
+  separado, mediante autorização explícita do usuário. Ver
+  `backend/worker/README.md` pra operação detalhada dos dois jobs.
 - **Backfill do gap (dez/2025 até hoje) roda no servidor**, não localmente — evita abrir uma
   segunda janela de defasagem entre o fim de um backfill local e o início da ingestão real no
   servidor.
@@ -640,7 +645,8 @@ servidor de produção real precisa de confirmação explícita antes de rodar.
 16. Instalar a linha de `infra/scripts/crontab-airquality-prod` no crontab do `srvadmin`
     (`crontab -e`, preservando as linhas já existentes do nokekoi).
 17. **Gate manual, com autorização explícita do usuário**: só depois de tudo acima validado,
-    iniciar o worker de ingestão em tempo real:
+    iniciar o worker (jobs de arquivo horário + status a cada 30min, nomeando o serviço direto
+    funciona mesmo com `profiles: manual`):
     `docker compose -f infra/docker-compose.prod.yml --env-file infra/.env.prod up -d worker`.
 18. (Opcional, depois de validado) Disparar o workflow `Deploy (manual)` pela aba Actions do
     GitHub, confirmando que o pipeline automatizado reproduz os passos 6 e 9 sem erro (sem tocar
