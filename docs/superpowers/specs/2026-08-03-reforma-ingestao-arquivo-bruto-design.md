@@ -77,6 +77,25 @@ que o modelo teórico projetaria — ao solicitar pontos novos, usar o consumo m
   função `IMMUTABLE` compartilhada) exigiria alterar a coluna gerada de `sensor_readings` — o
   rebuild de 32,4 M linhas que a decisão anterior justamente evita. Duplicação aceita, com
   comentário na migration nova apontando a 0002 como origem.
+
+  **Por que existem duas colunas `pm2_5_corrected`** (ponto que gerou confusão na revisão da spec,
+  registrado aqui para quem for implementar): a tabela `sensor_status` guarda os canais crus
+  (`pm2.5_atm_a`, `pm2.5_atm_b`) que a chamada bulk devolve, mas a interface exibe o valor
+  corrigido. Como `/readings/latest-by-sensor` passa a ler dessa tabela, ela precisa saber produzir
+  esse valor — senão a fórmula LRAPA iria parar num terceiro lugar (SQL do endpoint ou frontend).
+
+  Não são medidas diferentes: mesmo sensor, mesmo dado físico, mesma fórmula. O que difere é
+  **qual leitura** cada tabela guarda — `sensor_readings` guarda todas as leituras da janela,
+  `sensor_status` guarda apenas a mais recente. Referindo-se ao mesmo `time_stamp`, as duas
+  produzem valor idêntico. Divergem no dia a dia só porque apontam para instantes diferentes
+  (status até 30 min atrás, arquivo até 1 h atrás).
+
+  | | `sensor_readings.pm2_5_corrected` | `sensor_status.pm2_5_corrected` |
+  |---|---|---|
+  | Alimentada por | job de arquivo (1 h) | job de status (30 min) |
+  | Consumida por | continuous aggregates → gráficos, card do município | `/readings/latest-by-sensor` → tabela de sensores, pinos |
+  | Volume | série completa, 32,4 M linhas | 1 linha por sensor, sobrescrita |
+
 - **Isolamento de falha por sensor.** Hoje `BackfillHistoricalPurpleAir` aborta o lote inteiro se um
   sensor falha. No job de arquivo, um sensor que falha simplesmente não avança seu watermark e é
   retentado na hora seguinte com janela mais larga; os demais seguem. A execução é registrada como
