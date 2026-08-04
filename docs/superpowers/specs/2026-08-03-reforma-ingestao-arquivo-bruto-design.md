@@ -57,7 +57,10 @@ que o modelo teórico projetaria — ao solicitar pontos novos, usar o consumo m
 - **Tabela nova `sensor_status`, alimentada por job separado a cada 30 minutos.** Existe porque
   `channel_flags` e `channel_state` só são oferecidos pelo endpoint realtime; o `/history` não os
   tem (ver comentário em `purpleair_api_client.py:39-43`). Chamada bulk `/v1/sensors` pedindo
-  `last_seen`, `channel_flags`, `channel_state`, `pm2.5_atm_a`, `pm2.5_atm_b`. Uma linha por sensor,
+  `last_seen`, `channel_flags`, `channel_state`, `pm2.5_atm_a`, `pm2.5_atm_b`, `latitude`,
+  `longitude` — sete campos. `latitude`/`longitude` entraram ao escrever o plano: como
+  `/readings/latest-by-sensor` passa a ler desta tabela e devolve a posição do sensor, o mapa do
+  frontend depende dela. Custo adicional desprezível (2 pontos por linha). Uma linha por sensor,
   sobrescrita a cada ciclo — tabela comum, não hypertable.
 - **`/readings/latest-by-sensor` passa a ler de `sensor_status`.** Motivo: com o valor vindo de
   `sensor_readings` (horário) e o status vindo de `sensor_status` (30 min), a interface juntaria
