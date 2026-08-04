@@ -593,6 +593,25 @@ servidor de produção real precisa de confirmação explícita antes de rodar.
 8. Validar o restore: conferir contagem de linhas em `sensors` e `sensor_readings` no servidor
    contra a origem local (`SELECT count(*) FROM sensors;` / `SELECT count(*) FROM
    sensor_readings;` nos dois lados) antes de prosseguir.
+8.5. **Transferir os arquivos de publicações** (`reports_data`, volume Docker separado do banco —
+   `pg_dump`/`pg_restore` não move isso, só linhas de tabela). Sem este passo, `image_path`/
+   `file_path` na tabela `reports` apontam pra arquivos que não existem no servidor: capa e PDF
+   ficam quebrados na página `/publicacoes` mesmo com o banco 100% restaurado (descoberto na
+   execução real do Runbook em 2026-08-04).
+   ```bash
+   # local
+   docker exec airquality_js_backend tar czf /tmp/reports_data.tar.gz -C /app/data/reports .
+   docker cp airquality_js_backend:/tmp/reports_data.tar.gz ./reports_data.tar.gz
+   scp -P 22024 ./reports_data.tar.gz srvadmin@200.129.173.88:~/reports_data.tar.gz
+
+   # servidor
+   docker cp ~/reports_data.tar.gz airquality_js_prod-backend-1:/tmp/reports_data.tar.gz
+   docker exec airquality_js_prod-backend-1 sh -c \
+     'tar xzf /tmp/reports_data.tar.gz -C /app/data/reports && rm /tmp/reports_data.tar.gz'
+   ```
+   Validar: `docker exec airquality_js_prod-backend-1 find /app/data/reports -type f | wc -l`
+   bate com a contagem local, e `curl -sI https://acrequalidadedoar.ufac.br/api/media/reports/img/<algum-arquivo>.jpg`
+   devolve `200`.
 9. `docker compose -f infra/docker-compose.prod.yml --env-file infra/.env.prod exec -T backend
    alembic upgrade head` — garante que qualquer migration aplicada depois do dump local também
    rode no servidor.
